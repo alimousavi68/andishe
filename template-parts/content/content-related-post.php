@@ -38,7 +38,7 @@
                 fill="#FF9900" />
         </svg>
 
-        <p class="text-blue box-title f24 fw-7 m-0 me-2">مطالب مرتبط</p>
+        <p class="text-blue box-title f24 fw-7 me-2">مطالب مرتبط</p>
     </div>
     <?php
     // دریافت برچسب‌های مرتبط با پست فعلی

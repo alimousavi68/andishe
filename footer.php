@@ -178,11 +178,10 @@
 
       // Get the offset position of the navbar
       var sticky = menu.offsetTop;
-      console.log('offset of top:  ' + sticky);
+
 
       // Add the "sticky" class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position.
       if (window.pageYOffset > sticky) {
-        console.log('widnow width : ' + windowWidth);
 
         if (windowWidth < 768) {
           console.log('mobile width : ' + windowWidth);
@@ -358,6 +357,17 @@
     <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
   </svg>
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/breaking-news-ticker.min.js"></script>
+
+<script>
+  jQuery(document).ready(function ($) {
+    // $('#newsTicker2').data('breakingNews').next();
+    $('#newsTicker2').breakingNews({
+      direction: 'rtl'
+    });
+  });
+</script>
 
 </body>
 

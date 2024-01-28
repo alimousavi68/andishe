@@ -38,9 +38,10 @@
 
         .round-icon {
             background-color: var(--i8-dark-complete-color);
-            width: 37px;
-            height: 37px;
-            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            color: var(--i8-light-primary);
         }
 
         .i8-main-menu-frame {
@@ -57,14 +58,14 @@
 
         .i8-main-menu {
             display: flex;
-            max-width: 1300px;
-            height: 50px;
+            max-width: 900px;
+            height: 44px;
+            overflow: hidden;
             padding: 7px;
             justify-content: space-between;
             flex-shrink: 0;
             position: relative;
-            background-color: var(--i8-light-fg-color);
-            box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.10);
+            color: white;
             align-content: space-between;
             flex-wrap: wrap;
         }
@@ -78,129 +79,151 @@
 
         #mini-logo {
 
-            width:0px;
+            width: 0px;
             overflow: hidden;
-            transition: width 0.5s ease ;
+            transition: width 0.5s ease;
         }
 
         .i8-show {
             width: 122px !important;
-            transition: width 0.5s ease ;
+            transition: width 0.5s ease;
         }
     </style>
 
 </head>
 
+
+
+<style>
+    .topbar {
+        height: 26px;
+        padding: 5px 0;
+    }
+
+    .logo-container {
+        display: flex;
+        width: 170px;
+        max-width: 170px;
+        height: 107px;
+        padding: 3px 0px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        border-radius: 0px 0px 10px 10px;
+        background: var(--i8-dark-complete-color);
+    }
+
+    .header-box {
+        background: linear-gradient(180deg, #0029C0 0%, #0029C0 50%, #FFF 50%, #FFF 80.71%);
+        height: 116px
+    }
+
+    .menu-container {
+        height: 58px;
+    }
+
+    .newsticker-container {
+        height: 58px;
+        width: 100%;
+        display: flex;
+        align-content: center;
+        align-items: center;
+    }
+</style>
+
 <body dir="rtl" class="bg-main">
-    <!-- header -->
+
+<!-- header -->
     <header id="header" class="mb-4">
+        <div id="header-container" class=" header-container">
 
+            <div class="topbar container d-flex justify-content-between bg-dark-primary">
+                <div class="datecontainer d-flex f14 justify-content-end text-black"
+                    style="border-right:2px solid var(--i8-dark-complete-color);padding-right:5px;">
+                    <?php $date = new jDateTime(true, true, 'Asia/Tehran');
+                    echo $date->date("H:i - l j F Y "); ?>
+                </div>
+                <div class="social-btn" style="border-left:2px solid var(--i8-dark-complete-color);padding-left:5px;">
+                    <?php i8_show_social_icons(18, 18); ?>
+                </div>
+            </div>
 
-        <!-- Main header -->
-        <div id="header-container" class="row header-container">
-            <div
-                class="col-24 d-flex flex-column justify-content-center justify-content-lg-between white-shadow py-2 px-0 d-flex ">
-                <div class="container d-flex justify-content-center justify-content-between align-items-center px-lg-0">
-                    <div class="col-18 col-md-2 d-flex w-auto gap-4">
-                        <!-- Logo -->
+            <div class="header-box d-flex justify-content-center">
+                <div class="d-flex container row p-0 gap-0 justify-content-between">
+                    <div class="logo-container col">
                         <a href="<?php echo bloginfo('url') ?>" title="<?php bloginfo('title'); ?> " class="logo">
-                            <img width="177" height="70" class="header-logo"
-                                src="<?php echo get_stylesheet_directory_uri(); ?>/images/global/logo-andishe.png"
+                            <img width="160" height="94" class="header-logo"
+                                src="<?php echo get_stylesheet_directory_uri(); ?>/images/global/gozaresh_logo.png"
                                 alt="logo" />
                         </a>
-                        <!-- End Logo -->
                     </div>
+                    <div class="left-box col d-flex flex-column p-0">
 
-                    <!-- Social media And mobile Menu -->
-                    <div
-                        class="col-auto py-2 d-flex flex-column justify-content-between gap-1 gap-lg-2 gap-sm-2 text-white">
-                        <div class="d-flex d-lg-none justify-content-end gap-2">
+                        <div class="row p-0">
+                            <div class="d-flex flex-row col-21 menu-container">
+                                <?php build_custom_menu_by_location('primary'); ?>
+                            </div>
 
-                            <a href="#"
-                                class="dark-mode-switch1 dark-btn  px-1 px-lg-0 px-sm-1 d-flex justify-content-center align-items-center"
-                                alt="dark mode button" aria-label="dark mode button">
-                                <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    fill="var(--i8-light-fg-color)" class="bi bi-brightness-high" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
-                                </svg>
-                            </a>
-                            <a href="<?php echo home_url('/?s'); ?>"
-                                class="dark-btn px-1 px-lg-0 px-sm-1  d-flex justify-content-center align-items-center"
-                                alt="search button" aria-label="search button">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
-                                    fill="var(--i8-light-fg-color)" class="bi bi-search" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                                </svg>
-                            </a>
-                            <?php i8_mobile_menu('mobile'); ?>
+                            <!-- Tools Btn -->
+                            <div class="d-flex col-3 justify-content-end align-items-center gap-2 gap-lg-2 gap-sm-2">
+                                <a href="#"
+                                    class="dark-mode-switch  px-1 px-lg-0 px-sm-1 round-icon d-flex justify-content-center align-items-center"
+                                    alt="dark mode button" aria-label="dark mode button">
+                                    <svg class="" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        fill="var(--i8-light-primary)" class="bi bi-brightness-high"
+                                        viewBox="0 0 18 18">
+                                        <path
+                                            d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                                    </svg>
+                                </a>
+                                <a href="<?php echo home_url('/?s'); ?>"
+                                    class=" px-1 px-lg-0 px-sm-1 round-icon d-flex justify-content-center align-items-center"
+                                    alt="search button" aria-label="search button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        fill="var(--i8-light-primary)" class="bi bi-search" viewBox="0 0 18 18">
+                                        <path
+                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <!-- End Tools Btn -->
                         </div>
 
-                        <div class="">
-                            <?php i8_show_social_icons(21, 21); ?>
-                        </div>
-                        <div class="d-flex f14 justify-content-end">
-                            <?php
-                            $date = new jDateTime(true, true, 'Asia/Tehran');
-                            echo $date->date("H:i - l j F Y "); ?>
-                        </div>
+                        <div class="newsticker-container">
 
+                            <div class="breaking-news-ticker" id="newsTicker2">
+                                <div class="bn-label">اخبار مهم</div>
+                                <div class="bn-news">
+                                    <ul>
+                                        <li><a href="#">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما
+                                                سيلهي القارئ
+                                                عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي
+                                                يقرأها.</a>
+                                        </li>
+                                        <li><a href="#">العديد من برامح النشر المكتبي وبرامح تحرير صفحات الويب</a></li>
+                                        <li><a href="#">هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن
+                                                الغالبية تم
+                                                تعديلها بشكل ما عبر إدخال بعض النوادر</a></li>
+                                        <li><a href="#">لافاَ للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن
+                                                له جذور في
+                                                الأدب اللاتيني </a></li>
+                                    </ul>
+                                </div>
+                                <div class="bn-controls">
+                                    <button><span class="bn-arrow bn-prev"></span></button>
+                                    <button><span class="bn-action"></span></button>
+                                    <button><span class="bn-arrow bn-next"></span></button>
+                                </div>
+                            </div>
 
+                        </div>
 
                     </div>
-                    <!-- End Social media And mobile Menu -->
-
                 </div>
-
-            </div>
-
-
-
-        </div>
-        <div id="i8-main-menu-frame" class="row i8-main-menu-frame">
-            <div class="container d-flex justify-content-center px-lg-0">
-
-                <!-- Main Menu -->
-                <div class="d-none d-lg-flex i8-main-menu col-24 d-flex flex-column justify-content-end ">
-                    <div class="d-flex flex-row">
-                        <a id="mini-logo" class="sticky-logo ms-2">
-                            <img width="122" height="40" src="<?php echo get_stylesheet_directory_uri(); ?>/images/global/mini-logo-andishe.webp" alt="logo"  />
-                        </a>
-                        <?php build_custom_menu_by_location('primary'); ?>
-                    </div>
-                    
-
-                    <!-- Tools Btn -->
-                    <div class="d-flex justify-content-end align-items-center gap-2 gap-lg-2 gap-sm-2">
-                        <a href="#"
-                            class="dark-mode-switch  px-1 px-lg-0 px-sm-1 round-icon d-flex justify-content-center align-items-center"
-                            alt="dark mode button" aria-label="dark mode button">
-                            <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                fill="var(--i8-light-fg-color)" class="bi bi-brightness-high" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
-                            </svg>
-                        </a>
-                        <a href="<?php echo home_url('/?s'); ?>"
-                            class=" px-1 px-lg-0 px-sm-1 round-icon d-flex justify-content-center align-items-center"
-                            alt="search button" aria-label="search button">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
-                                fill="var(--i8-light-fg-color)" class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                            </svg>
-                        </a>
-                    </div>
-                    <!-- End Tools Btn -->
-
-                </div>
-                <!-- End Main Menu -->
-
-
-
             </div>
         </div>
-
     </header>
-    <!-- header  -->
+ <!-- header  -->
+   

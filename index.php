@@ -2,12 +2,16 @@
 //header
 get_header();
 ?>
-<div class="container d-flex flex-column gap-2 px-0">
-    <div class="top-section container d-flex flex-column gap-4 px-0">
+<div class="top-section container-fluid d-flex flex-column gap-2 px-0">
+    <div class="top-section-container container d-flex flex-column gap-4 px-0">
         <?php
         // // todo: if top main is active
         get_template_part('template-parts/top_section'); ?>
     </div>
+</div>
+
+<div class="container d-flex flex-column gap-2 px-0">
+
     <div class="home-main-box py-3  d-flex flex-column gap-3">
         <?php
         // // Main box

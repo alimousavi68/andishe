@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/jquerysctipttop.css" rel="stylesheet"
+        type="text/css">
+
+    <!--Adding plugin css file -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/breaking-news-ticker.css">
+</head>
+
+<body>
+
+    <section class="demo-section-box" style="background-color: #fafafa;">
+        <div class="section-container">
+            <h2>Example 2 : RTL With Scroll Effect</h2>
+            <div class="demo-box">
+
+                <!-- DEMO2 HTML STARTS HERE *-->
+                <!-- *********************** -->
+                <div class="breaking-news-ticker" id="newsTicker2">
+                    <div class="bn-label">أخبار</div>
+                    <div class="bn-news">
+                        <ul>
+                            <li><a href="#">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ
+                                    عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها.</a>
+                            </li>
+                            <li><a href="#">العديد من برامح النشر المكتبي وبرامح تحرير صفحات الويب</a></li>
+                            <li><a href="#">هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم
+                                    تعديلها بشكل ما عبر إدخال بعض النوادر</a></li>
+                            <li><a href="#">لافاَ للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في
+                                    الأدب اللاتيني </a></li>
+                        </ul>
+                    </div>
+                    <div class="bn-controls">
+                        <button><span class="bn-arrow bn-prev"></span></button>
+                        <button><span class="bn-action"></span></button>
+                        <button><span class="bn-arrow bn-next"></span></button>
+                    </div>
+                </div>
+                <!-- *********************** -->
+                <!-- DEMO2 HTML END HERE *** -->
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Adding jquery library. minimum version 1.10.0 -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/breaking-news-ticker.min.js"></script>
+
+    <!-- ========== Script ========== -->
+            <!-- Script section -->
+    <!-- =========Script ========== -->
+    
+    <script>
+        jQuery(document).ready(function ($) {
+            //$('#newsTicker2').data('breakingNews').next();
+            $('#newsTicker2').breakingNews({
+                direction: 'rtl'
+            });
+        });
+    </script>
+</body>
+
+</html>

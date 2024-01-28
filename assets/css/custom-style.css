@@ -1,41 +1,38 @@
 /* Global  */
 
 @font-face {
-  font-family: 'iransansxv';
-  src: url('../font/IRANSansXV/IRANSansXV.woff2') format('woff2-variations'),
-    /* will be the standard and works in Safari now */
-    url('../font/IRANSansXV/IRANSansXV.woff2') format('woff2');
-  /* for the other supporting browsers */
-  font-weight: 100 1000;
-  font-display: fallback;
+  font-family: Yekan Bakh;
+  font-style: normal;
+  font-weight: normal;
+  src: url('../font/yekan-bakh/woff/YekanBakhFaNum-Regular.woff') format('woff'),
+    url('../font/yekan-bakh/woff2/YekanBakhFaNum-Regular.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: iransansx;
-  src: url('staticfonts/iransansx-regular.woff') format('woff');
+  font-family: Yekan Bakh;
+  font-style: normal;
+  font-weight: bold;
+  src: url('../font/yekan-bakh/woff/YekanBakhFaNum-Bold.woff') format('woff'),
+    url('../font/yekan-bakh/woff/YekanBakhFaNum-Bold.woff') format('woff2');
 }
 
-@font-face {
-  font-family: iransansx;
-  src: url('staticfonts/iransansx-bold.woff') format('woff');
-  font-weight: 700;
-}
 
 :root {
-  --i8-light-primary: rgba(20, 50, 96, 1);
-  --i8-dark-primary: rgba(20, 50, 96, 1);
-  --i8-light-primary-light: #0059B9;
+  --i8-light-primary: #0029C0;
+  --i8-dark-primary: #0029C0;
+  --i8-light-primary-light: #1d42c8;
   --i8-light-secondary: #4A4A4A;
   --i8-dark-secondary: #f8f8f8;
-  --i8-light-complete-color: #ff9900;
-  --i8-dark-complete-color: #ff9900;
+  --i8-light-complete-color: #FFB400;
+  --i8-dark-complete-color: #FFB400;
   --i8-light-bg-color: #f8f8f8;
   --i8-dark-bg-color: #171c28;
   --i8-light-fg-color: #ffffff;
   --i8-dark-fg-color: #222740;
   --i8-light-blue: #00C2FF;
   --i8-flip-box-hover: #F44336;
-  --i8-light-title-color: #505050;
+  --i8-light-title-color: #6A6A6A;
+  --i8-top-section:#fff;
 }
 
 .i8-light-primary-color {
@@ -112,6 +109,7 @@
 .f18 {
   font-size: clamp(15px, 2vw, 18px);
 }
+
 .f22 {
   font-size: clamp(19px, 2vw, 22px);
 }
@@ -293,7 +291,7 @@
 }
 
 .bg-main {
-  background-color: var(--i8-light-bg-color);
+  /* background-color: var(--i8-light-bg-color); */
 }
 
 .cat_btn_link {
@@ -317,7 +315,7 @@
 
 
 body * {
-  font-family: iransansx;
+  font-family: Yekan Bakh;
   outline: none;
   list-style: none;
 
@@ -325,12 +323,12 @@ body * {
 
 @supports (font-variation-settings: normal) {
   body * {
-    font-family: iransansxv;
+    font-family: Yekan Bakh;
     outline: none;
     list-style: none;
-    -moz-font-feature-settings: "ss02";
-    -webkit-font-feature-settings: "ss02";
-    font-feature-settings: "ss02";
+    /* -moz-font-feature-settings: "ss02"; */
+    /* -webkit-font-feature-settings: "ss02"; */
+    /* font-feature-settings: "ss02"; */
   }
 }
 
@@ -396,7 +394,7 @@ body a:hover {
 /* header  */
 .header-container {
   /* background: linear-gradient(270deg, #0C2955 5.52%, #143260 64.33%); */
-  background-color: var(--i8-light-primary);
+  /* background-color: var(--i8-light-primary); */
 }
 
 header nav#mainNav a {
@@ -730,7 +728,7 @@ footer {
 }
 
 #header .header-logo {
-  width: 148px;
+  width: 160px;
   height: auto;
   object-fit: cover;
 }
@@ -1041,7 +1039,7 @@ ul.dropdown-menu.submenu {
 .nav-item a {
   font-size: 16px;
   font-weight: 600px;
-  color: var(--i8-light-secondary);
+  color: white;
 }
 
 .nav-item a.active {
@@ -1690,8 +1688,8 @@ tr th:last-child {
 }
 
 body.bg-main.dark-mode {
-  color: #d5d5d5 !important;
-  background-color: var(--i8-dark-bg-color) !important;
+  /* color: #d5d5d5 !important; */
+  /* background-color: var(--i8-dark-bg-color) !important; */
 }
 
 .dark-mode #header,
@@ -1890,6 +1888,10 @@ body.bg-main.dark-mode a:hover,
   width: 15%;
 }
 
+.top-section{
+  background-color: var(--i8-top-section);
+}
+
 /* Number List Items */
 
 /*  box title  */
@@ -1911,9 +1913,11 @@ body.bg-main.dark-mode a:hover,
 } */
 
 .box-title {
-  padding: 12px 0;
-  color: var(--i8-light-primary);
+  padding-right: 13px;
+  margin: 12px 0 15px 0;
+  color: var(--i8-light-title-color);
   font-variation-settings: "wght" 700, "DOTS" 5 !important;
+  border-right: 4px solid var(--i8-dark-complete-color);
 }
 
 .i8-breadcrumb>.current {
