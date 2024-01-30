@@ -14,6 +14,7 @@ echo $sub_title_print . '</div>';
         position: relative;
         color: rgba(0, 0, 0, 0.7);
         border-right: 2px solid #E5E5E5;
+        font-variation-settings: "wght" 200,"DOTS" 1;
     }
 
     .timeline-item p {
@@ -49,7 +50,7 @@ echo $sub_title_print . '</div>';
         border-image: linear-gradient(to bottom, rgba(229, 229, 229, 1) 60%, rgba(229, 229, 229, 0)) 1 100%;
     }
 </style>
-<div class="timeline_list pe-3 pe-lg-4 pe-xl-4 pe-md-4 ">
+<div class="timeline_list pe-2 pe-lg-2 pe-xl-2 pe-md-2 ">
     <?php
     // نمایش محتویات ویجت- نمایش پست ها
     $category_posts = new WP_Query(

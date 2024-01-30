@@ -18,7 +18,7 @@ if ($hide_title != 'on') {
   }
 
   .hero-small-column>div:first-child {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--bs-border-color);
   }
 </style>
 

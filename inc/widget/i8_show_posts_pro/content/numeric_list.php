@@ -8,7 +8,7 @@ if ($hide_title != 'on') {
 }
 echo $sub_title_print . '</div>';
 
-echo '<ul class="numeric-list-content d-flex flex-wrap mb-0">';
+echo '<ul class="numeric-list-content d-flex flex-wrap mb-0 row-gap-4 pt-2">';
 // نمایش محتویات ویجت- نمایش پست ها
 $category_posts = new WP_Query(array(
     'posts_per_page' => $num,
@@ -25,12 +25,12 @@ if ($category_posts->have_posts()) {
             <article class="numeric-list ">
                 <div class="numeric-list-item d-flex justify-content-start align-items-top ">
                     <div class="list-title-none">
-                        <span class="post-category f14 fw-4">
-                            <?php echo i8_primary_category(get_the_ID()) ?>
-                        </span>
+                        <!-- <span class="post-category f14 fw-4">
+                            <?php //echo i8_primary_category(get_the_ID()) ?>
+                        </span> -->
                         <a href="<?php the_permalink(); ?>"
                             class="<?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> i8-blink">
-                            <?php i8_limit_text(get_the_title(), 55, '...'); ?>
+                            <?php i8_limit_text(get_the_title(), 70, '...'); ?>
                         </a>
                     </div>
                 </div>

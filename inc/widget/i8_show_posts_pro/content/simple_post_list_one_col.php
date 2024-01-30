@@ -65,7 +65,7 @@ if ($category_posts->have_posts()) {
                         <?php i8_limit_text(get_the_title(), 150, '...'); ?>
                     </a>
                     <?php if ($hide_excerpt != 'on'): ?>
-                        <p class="lead text-gray mb-0 d-lg-block d-md-block d-none lead mb-0 text-gray pt-1">
+                        <p class="lead text-gray mb-0 d-lg-block d-md-block d-none lead mb-0 text-gray pt-1 text-justify f13 fw-2">
                             <?php i8_limit_text(get_the_excerpt(), 135, '...'); ?>
                         </p>
                     <?php endif; ?>

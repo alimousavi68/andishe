@@ -461,7 +461,7 @@ function build_custom_menu_by_location($location, $style_type = 'row')
     if ($menu_items) {
         $type_class = ($style_type == 'column') ? 'flex-column' : 'flex-row';
         $gap = ($style_type == 'column') ? 'gap-0' : 'gap-3';
-        echo '<ul class="navbar-nav mb-lg-0 menu-list d-flex  ' . $type_class . ' flex-wrap align-content-center gap-2  px-0 ' . $gap . ' ">';
+        echo '<ul class="navbar-nav mb-lg-0 menu-list d-flex  ' . $type_class . ' flex-wrap align-content-center  gap-2  px-0 ' . $gap . ' ">';
         echo build_custom_menu($menu_items);
         echo '</ul>';
     }

@@ -40,7 +40,7 @@ echo $sub_title_print . '</div>';
         ?>
         <div class="<?php echo $col; ?> multi-item d-flex flex-column gap-2 <?php echo ( $category_posts2->current_post + 1  == $num ) ? '' : 'border-bottom'; ?>">
           <a href="<?php the_permalink(); ?>" class="image_frame" >
-            <?php echo i8_the_thumbnail('i8-md-219-140', 'hover multi-item-thumb w-100 i8-img-fit', $dimenition = array('width' => 231, 'height' => 140), true, '', false, true); ?>
+            <?php echo i8_the_thumbnail('i8-md-219-140', 'hover multi-item-thumb w-100 i8-img-fit ' . $thumb_radius, $dimenition = array('width' => 231, 'height' => 140), true, '', false, true); ?>
           </a>
           <div class="single-item-data d-flex flex-column gap-1 justify-content-between">
             <div class="title-box">

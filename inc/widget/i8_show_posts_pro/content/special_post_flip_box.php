@@ -22,7 +22,7 @@ $category_posts = new WP_Query(array(
 ));
 
 if ($category_posts->have_posts()) {
-    while ($category_posts->have_posts()) {
+    while ($category_posts->have_posts()) { 
         $category_posts->the_post();
 
         $primary_cat = get_post_meta(get_the_ID(), 'hasht_primary_category');

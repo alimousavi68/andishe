@@ -136,11 +136,11 @@
 <body dir="rtl" class="bg-main">
 
 <!-- header -->
-    <header id="header" class="mb-4">
+    <header id="header" >
         <div id="header-container" class=" header-container">
 
             <div class="topbar container d-flex justify-content-between bg-dark-primary">
-                <div class="datecontainer d-flex f14 justify-content-end text-black"
+                <div class="datecontainer d-flex f12 fw-2 justify-content-end text-black"
                     style="border-right:2px solid var(--i8-dark-complete-color);padding-right:5px;">
                     <?php $date = new jDateTime(true, true, 'Asia/Tehran');
                     echo $date->date("H:i - l j F Y "); ?>

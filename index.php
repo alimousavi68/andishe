@@ -2,7 +2,7 @@
 //header
 get_header();
 ?>
-<div class="top-section container-fluid d-flex flex-column gap-2 px-0">
+<div class="top-section container-fluid d-flex flex-column gap-2 px-0 border-bottom border-top">
     <div class="top-section-container container d-flex flex-column gap-4 px-0">
         <?php
         // // todo: if top main is active
@@ -10,7 +10,7 @@ get_header();
     </div>
 </div>
 
-<div class="container d-flex flex-column gap-2 px-0">
+<div class="container d-flex flex-column gap-2 px-0 border-start border-end">
 
     <div class="home-main-box py-3  d-flex flex-column gap-3">
         <?php
