@@ -3,11 +3,12 @@ class i8_menu extends WP_Widget
 {
     //داده های پیش فرض در صورت خالی رها شدن فیلدها
     private $default_field_data = array(
-        'title'           => '',
-        'sub_title'       => '',
-        'hide_title'      => true,
-        'menu_id'    => '',
-        'num'             => '',
+        'title' => '',
+        'sub_title' => '',
+        'hide_title' => true,
+        'show_row' => true,
+        'menu_id' => '',
+        'num' => '',
     );
     //متد سازنده کلاس
     function __construct()
@@ -21,44 +22,57 @@ class i8_menu extends WP_Widget
     //متد نمایش فرم در بخش تنظیمات 
     function form($instance)
     {
-        $instance = wp_parse_args((array)$instance, $this->default_field_data);
+        $instance = wp_parse_args((array) $instance, $this->default_field_data);
         $title = esc_attr($instance['title']);
         $sub_title = esc_attr($instance['sub_title']);
 
-        $hide_title      = esc_attr($instance['hide_title']);
+        $hide_title = esc_attr($instance['hide_title']);
+        $show_row = esc_attr($instance['show_row']);
 
-        $menu_id   = esc_attr($instance['menu_id']);
-?>
+        $menu_id = esc_attr($instance['menu_id']);
+        ?>
         <p>
-            <input type="checkbox" name="<?php echo $this->get_field_name('hide_title'); ?>" id="<?php echo $this->get_field_id('hide_title'); ?>" class="checkbox" <?php echo ($hide_title == 'on') ? 'checked="checked"' : ''; ?>>
+            <input type="checkbox" name="<?php echo $this->get_field_name('show_row'); ?>"
+                id="<?php echo $this->get_field_id('show_row'); ?>" class="checkbox" <?php echo ($show_row == 'on') ? 'checked="checked"' : ''; ?>>
+            <label for="<?php echo $this->get_field_id('show_row'); ?>">نمایش به صورت خطی</label>
+        </p>
+        <p>
+            <input type="checkbox" name="<?php echo $this->get_field_name('hide_title'); ?>"
+                id="<?php echo $this->get_field_id('hide_title'); ?>" class="checkbox" <?php echo ($hide_title == 'on') ? 'checked="checked"' : ''; ?>>
             <label for="<?php echo $this->get_field_id('hide_title'); ?>">مخفی سازی عنوان</label>
         </p>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>">عنوان</label>
-            <input type="text" name="<?php echo $this->get_field_name('title'); ?>" id="<?php echo $this->get_field_id('title'); ?>" value="<?php echo $title; ?>" class="widefat">
+            <input type="text" name="<?php echo $this->get_field_name('title'); ?>"
+                id="<?php echo $this->get_field_id('title'); ?>" value="<?php echo $title; ?>" class="widefat">
         </p>
         <p>
             <label for="<?php echo $this->get_field_id('sub_title'); ?>">زیر عنوان (متنی که در زیرعنوان قرار می گیرد)</label>
-            <input type="text" name="<?php echo $this->get_field_name('sub_title'); ?>" id="<?php echo $this->get_field_id('sub_title'); ?>" value="<?php echo $sub_title; ?>" class="widefat">
+            <input type="text" name="<?php echo $this->get_field_name('sub_title'); ?>"
+                id="<?php echo $this->get_field_id('sub_title'); ?>" value="<?php echo $sub_title; ?>" class="widefat">
         </p>
         <!-- logo -->
         <p>
             <label for="<?php echo $this->get_field_id('menu_id'); ?>">موقعیت منو</label>
-            <select name="<?php echo $this->get_field_name('menu_id'); ?>" id="<?php echo $this->get_field_id('menu_id'); ?>" class="widefat">
+            <select name="<?php echo $this->get_field_name('menu_id'); ?>" id="<?php echo $this->get_field_id('menu_id'); ?>"
+                class="widefat">
                 <option value="none">انتخاب کنید</option>
                 <?php
                 $menus = wp_get_nav_menus();
-                foreach ($menus as $item) :
-                ?>
-                    <option value="<?php echo $item->term_id ?>" <?php echo ($item->term_id == $menu_id) ? 'selected="selected"' : ''; ?>><?php echo $item->name; ?></option>
+                foreach ($menus as $item):
+                    ?>
+                    <option value="<?php echo $item->term_id ?>" <?php echo ($item->term_id == $menu_id) ? 'selected="selected"' : ''; ?>>
+                        <?php echo $item->name; ?>
+                    </option>
                 <?php endforeach; ?>
             </select>
         </p>
         <p>
             <label for="<?php echo $this->get_field_id('num'); ?>">نقطه شکست</label>
-            <input type="number" name="<?php echo $this->get_field_name('num'); ?>" id="<?php echo $this->get_field_id('num'); ?>" value="<?php echo (!empty($num)) ? $num : 5; ?>" class="widefat">
+            <input type="number" name="<?php echo $this->get_field_name('num'); ?>"
+                id="<?php echo $this->get_field_id('num'); ?>" value="<?php echo (!empty($num)) ? $num : 5; ?>" class="widefat">
         </p>
-    <?php
+        <?php
     }
     //متد ذخیره تنظیمات ویجت 
     function update($new_instance, $old_instance)
@@ -66,11 +80,12 @@ class i8_menu extends WP_Widget
         // دیتای قبلی در متغییری که به خروجی فرستاده می شود ست می شود تا در صورت عدم تغییر از همین اطلاعات استفاده شود
         $instance = $old_instance;
         //در صورتی که کاربر فیلدی را خالی رها کرده بود و نیاز به دیتای پیش فرض داشت با این روش دیتای پیش فرض از قبل تعریف شده با دیتای جدید مرج می شود
-        $new_instance = wp_parse_args((array)$new_instance, $this->default_field_data);
+        $new_instance = wp_parse_args((array) $new_instance, $this->default_field_data);
         //تغییر دیتای های قبلی با دیتای های جدید ثبت شده توسط کاربر
         $instance['title'] = sanitize_text_field($new_instance['title']);
         $instance['sub_title'] = sanitize_text_field($new_instance['sub_title']);
         $instance['hide_title'] = sanitize_text_field($new_instance['hide_title']);
+        $instance['show_row'] = sanitize_text_field($new_instance['show_row']);
 
         $instance['menu_id'] = sanitize_text_field($new_instance['menu_id']);
 
@@ -89,30 +104,34 @@ class i8_menu extends WP_Widget
         $sub_title = $instance['sub_title'];
         $sub_title_print = (!empty($sub_title)) ? '<p>' . $sub_title . '</p>' : '';
 
-        $hide_title      = $instance['hide_title'];
+        $hide_title = $instance['hide_title'];
+        $show_row = $instance['show_row'];
 
         $num = $instance['num'];
 
         $menu_id = $instance['menu_id'];
 
-        $show_mobile  = $instance['show_mobile'];
+        $show_mobile = $instance['show_mobile'];
         $show_desktop = $instance['show_desktop'];
 
         echo $args['before_widget'];
 
         if ($hide_title != 'on') {
             echo '<div class="text-title box-title box-title-mini display-4">';
-            echo $args['before_title']  . $title  .  $args['after_title'];
+            echo $args['before_title'] . $title . $args['after_title'];
             echo $sub_title_print . '</div>';
         } else {
-            echo '<div class="text-title box-title box-title-mini display-4 py-4"></div>';
+           // echo '<div class="text-title box-title box-title-mini display-4 py-4"></div>';
         }
-    ?>
+        ?>
 
-        <?php build_custom_menu_by_id($menu_id, 'column'); ?>
+        <?php
+        $is_row = ($show_row!='on') ? 'column' : 'row';
+        $is_border = ($show_row!='on') ? 'border-0' : '';
+        build_custom_menu_by_id($menu_id, $is_row ,$is_border); ?>
 
 
-<?php
+        <?php
         echo $args['after_widget'];
     }
 }

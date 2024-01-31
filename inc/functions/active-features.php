@@ -44,6 +44,9 @@ add_filter('intermediate_image_sizes_advanced', 'remove_default_image_sizes');
 add_image_size('i8-590-370', 590 , 370 , true);  //  , 
 add_image_size('i8-275-172', 275 , 172 , true);  //  , 
 add_image_size('i8-80-60' , 80 , 60  , true);  //  , 
+add_image_size('i8-80-80' , 80 , 80  , true);  //  , 
+add_image_size('i8-380-238' , 380 , 238  , true);  //  , 
+
 
 add_image_size('i8-xl-430-242', 430 , 242 , true);  //  , 
 add_image_size('i8-lg-290-163', 290 , 163 , true);  //  , 

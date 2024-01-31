@@ -236,14 +236,14 @@ class i8_site_info_box extends WP_Widget
 
         if ($hide_title != 'on') {
             echo '<div class="text-title box-title display-4">';
-            echo $args['before_title'] . $icon_print . $title  .  $args['after_title'];
+            echo $args['before_title'] . $title  .  $args['after_title'];
             echo $sub_title_print . '</div>';
         }
     ?>
         <div class="site-info-box d-flex flex-column gap-1 w-100 ">
             <?php if ($hide_logo != 'on') : ?>
                 <div class="site-info-logo text-center">
-                    <img width="190" height="90" class="footer-logo w-100 py-2" src="<?php echo $logo_img; ?>" loading="lazy" alt="logo" />
+                    <img width="auto" height="auto" class="footer-logo w-100 py-2" src="<?php echo $logo_img; ?>" loading="lazy" alt="logo" />
                 </div>
             <?php endif; ?>
             <?php if ($hide_description != 'on') : ?>
@@ -253,20 +253,20 @@ class i8_site_info_box extends WP_Widget
             <?php endif; ?>
             <?php if ($hide_social_box != 'on') : ?>
                 <div class="site-info-social-links">
-                    <div class="d-flex justify-content-between gap-2 ">
-                        <a class="p-0 p-lg-0 p-sm-1" href="<?php echo $social_link_1; ?>" alt="twitter channel" aria-label="twitter channel">
+                    <div class="d-flex justify-content-center column-gap-5">
+                        <a class="p-0 p-lg-0 p-sm-1" href="<?php echo $social_link_1; ?>" alt="Social network link" aria-label="Social network link">
                             <?php echo $social_icon_1; ?>
                         </a>
-                        <a class="p-0 p-lg-0 p-sm-1" href="<?php echo $social_link_2; ?>" alt="twitter channel" aria-label="twitter channel">
+                        <a class="p-0 p-lg-0 p-sm-1" href="<?php echo $social_link_2; ?>" alt="Social network link" aria-label="Social network link">
                             <?php echo $social_icon_2; ?>
                         </a>
-                        <a class="p-0 p-lg-0 p-sm-1" href="<?php echo $social_link_3; ?>" alt="twitter channel" aria-label="twitter channel">
+                        <a class="p-0 p-lg-0 p-sm-1" href="<?php echo $social_link_3; ?>" alt="Social network link" aria-label="Social network link">
                             <?php echo $social_icon_3; ?>
                         </a>
-                        <a class="p-0 p-lg-0 p-sm-1" href="<?php echo $social_link_4; ?>" alt="twitter channel" aria-label="twitter channel">
+                        <a class="p-0 p-lg-0 p-sm-1" href="<?php echo $social_link_4; ?>" alt="Social network link" aria-label="Social network link">
                             <?php echo $social_icon_4; ?>
                         </a>
-                        <a class="p-0 p-lg-0 p-sm-1" href="<?php echo $social_link_5; ?>" alt="twitter channel" aria-label="twitter channel">
+                        <a class="p-0 p-lg-0 p-sm-1" href="<?php echo $social_link_5; ?>" alt="Social network link" aria-label="Social network link">
                             <?php echo $social_icon_5; ?>
                         </a>
 

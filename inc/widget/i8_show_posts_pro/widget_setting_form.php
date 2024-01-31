@@ -32,6 +32,10 @@
         <label for="<?php echo $this->get_field_id('hide_excerpt'); ?>">مخفی سازی خلاصه مطلب</label>
     </p>
     <p>
+        <input type="checkbox" name="<?php echo $this->get_field_name('hide_category'); ?>" id="<?php echo $this->get_field_id('hide_category'); ?>" class="checkbox" <?php echo ($hide_category == 'on') ? 'checked="checked"' : ''; ?>>
+        <label for="<?php echo $this->get_field_id('hide_category'); ?>"> نمایش  برچسب دسته بندی</label>
+    </p>
+    <p>
         <label for="<?php echo $this->get_field_id('icon_list_bullet'); ?>">آیکن کنار تیتر ( کد svg)</label>
         <textarea type="text" name="<?php echo $this->get_field_name('icon_list_bullet'); ?>" id="<?php echo $this->get_field_id('icon_list_bullet'); ?>" style="text-align:left;direction:ltr;" class="widefat" cols="30" rows="4"><?php echo $icon_list_bullet; ?></textarea>
     </p>

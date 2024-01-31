@@ -9,14 +9,14 @@
     <?php if (is_active_sidebar('fr-sidebar') || is_active_sidebar('fc-sidebar') || is_active_sidebar('fl-sidebar')): ?>
       <div class="row border-bottom py-3">
         <div
-          class="align-items-center align-items-xl-start col-md-12 col-sm-24 col-xl-5 d-flex flex-column justify-content-center justify-content-lg-start ">
+          class="align-items-center  col-md-12 col-sm-24 col-xl-5 d-flex flex-column justify-content-center align-content-center ">
           <?php
           dynamic_sidebar('fr-sidebar');
           ?>
         </div>
 
-        <div class="col-24 col-lg-14 col-md-14 col-md-24 col-sm-24 col-xl-14 d-flex flex-row gap-3">
-          <div class="row w-100">
+        <div class="col-24 col-lg-14 col-md-14 col-md-24 col-sm-24 col-xl-14 d-flex flex-row  gap-3">
+          <div class="row w-100 align-content-center">
             <?php
             dynamic_sidebar('fc-sidebar');
             ?>
@@ -24,7 +24,7 @@
         </div>
 
         <div
-          class="col-lg-5 col-md-12 col-md-5 col-sm-24 col-xl-5 d-flex justify-content-center justify-content-lg-end order-md-2">
+          class="col-lg-5 col-md-12 col-md-5 col-sm-24 col-xl-5 d-flex justify-content-center justify-content-lg-end align-content-center order-md-2">
           <?php
           dynamic_sidebar('fl-sidebar');
           ?>
@@ -40,7 +40,7 @@
     <div class="container p-3 ">
       <div class="row d-flex text-center text-lg-end text-md-end text-sm-center row-gap-3 flex-wrap-reverse">
         <span class="col-24 col-lg-20 col-md-20 col-sm-24 f13">تمامی حقوق مادی و معنوی این وبسایت متعلق به پایگاه خبری
-          تحلیلی اندیشه معاصر می باشد و هرگونه کپی برداری با ذکر منبع بلامانع است.</span>
+          تحلیلی گزارش ویژه می باشد و هرگونه کپی برداری با ذکر منبع بلامانع است.</span>
         <div class="col-24 col-lg-4 col-sm-24 col-md-4">
           <div
             class="d-xl-flex d-lg-flex d-md-flex justify-content-center gap-2 social-links justify-content-center align-items-center">
@@ -184,7 +184,7 @@
       if (window.pageYOffset > sticky) {
 
         if (windowWidth < 768) {
-          console.log('mobile width : ' + windowWidth);
+          // console.log('mobile width : ' + windowWidth);
           header.classList.add("sticky");
         } else {
           menu.classList.add("sticky");
@@ -357,8 +357,8 @@
     <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
   </svg>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/breaking-news-ticker.min.js"></script>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/jquery.min.js"></script>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/breaking-news-ticker.min.js"></script>
 
 <script>
   jQuery(document).ready(function ($) {

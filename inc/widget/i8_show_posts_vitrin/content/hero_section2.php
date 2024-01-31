@@ -20,7 +20,6 @@ if ($hide_title != 'on') {
   .hero-small-column>div:first-child {
     border-bottom: 1px solid var(--bs-border-color);
   }
-
 </style>
 
 <?php
@@ -48,18 +47,60 @@ if ($category_posts->have_posts()): ?>
       <div class="single-item-data single-big-post-meta-container d-flex flex-column gap-0">
         <!-- <span class="post-subtitle f13 fw-1"><?php $subtitle = get_post_meta(get_the_ID(), '_post_subtitle', true);
         echo ($subtitle) ? $subtitle : ''; ?></span> -->
-        <h1 class="post-title l1 pe-2 " style="font-size:30px;border-right: 5px solid var(--i8-light-complete-color);">
-        <a href="<?php echo get_the_permalink(); ?>" class="i8-blink fw-5 fd-0">
+        <h1 class="post-title l1 pe-2 "
+          style="min-height:90px;font-size:30px;border-right: 5px solid var(--i8-light-complete-color);">
+          <a href="<?php echo get_the_permalink(); ?>" class="i8-blink fw-5 fd-0">
             <?php i8_limit_text(get_the_title(), 115, '...'); ?>
-          </a></h1>
+          </a>
+        </h1>
         <?php if ($hide_excerpt != 'on'): ?>
           <p class="post-excerpt f13 fw-2">
             <?php i8_limit_text(get_the_excerpt(), 220, '...'); ?>
           </p>
+          <p class="post-publish-date f12 text-start text-subtitle">
+            <?php the_date() ?>
+          </p>
         <?php endif; ?>
-        <p class="post-publish-date f12 text-start text-subtitle">
-          <?php the_date() ?>
-        </p>
+
+
+        <!-- related-posts -->
+        <?php if (true): ?>
+          <div class="timeline_list ">
+            <?php
+            // نمایش محتویات ویجت- نمایش پست ها
+            $related_category_posts = new WP_Query(
+              array(
+                'posts_per_page' => 2,
+                'cat' => -1,
+                'order' => 'DESC',
+                'orderby' => $orderby
+              )
+            );
+
+            if ($related_category_posts->have_posts()) {
+              while ($related_category_posts->have_posts()) {
+                $related_category_posts->the_post();
+                ?>
+
+                <div class="timeline-item" style="padding:2.5em 1.2em 0em" date-is='<?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' پیش'; ?>'>
+                  <a class="i8-blink display-6 fw-2 l22-05 text-normal cursor-pointer text-grey"
+                    href="<?php echo get_the_permalink(); ?>">
+                    <?php
+                    show_post_structure_related_icon(get_the_ID());
+                    i8_limit_text(get_the_title(), 100, '...'); ?>
+
+                  </a>
+                </div>
+
+                <?php
+              }
+              wp_reset_postdata();
+            }
+            ?>
+          </div>
+        <?php endif; ?>
+
+
       </div>
     <?php endwhile;
 endif; ?>
@@ -101,6 +142,9 @@ endif; ?>
               <p class="post-publish-date f12 text-start text-subtitle my-0">
                 <?php the_date() ?>
               </p>
+
+
+
             </div>
           </div>
 
@@ -116,7 +160,7 @@ endif; ?>
       // نمایش محتویات ویجت- نمایش پست ها
       $category_posts = new WP_Query(
         array(
-          'posts_per_page' => ($num - 2) ,
+          'posts_per_page' => ($num - 2),
           'cat' => $cat,
           'order' => 'DESC',
           'orderby' => $orderby,
@@ -138,8 +182,7 @@ endif; ?>
             </div>
             <div class="d-flex flex-column ">
               <h3 class="me-2 l22-05 post-title">
-                <a class="i8-blink display-5 l1"
-                  href="<?php echo get_the_permalink(); ?>">
+                <a class="i8-blink display-5 l1" href="<?php echo get_the_permalink(); ?>">
                   <?php i8_limit_text(get_the_title(), 65, '...'); ?>
                 </a>
               </h3>

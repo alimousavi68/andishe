@@ -19,7 +19,7 @@ $author_name = (get_post_meta($post->ID, 'hasht-author-name', true)) ? get_post_
 
     <!-- breadcrumb -->
     <div
-        class="d-flex align-items-top pb-2 mx-0 align-content-center row-gap-3 i8-breadcrumb box p-2 order-2 order-xl-1 order-lg-1 align-items-center  flex-wrap justify-content-around">
+        class="d-flex align-items-top pb-2 mx-0 align-content-center row-gap-3 i8-breadcrumb box p-2 order-2 order-xl-1 order-lg-1 align-items-center  flex-wrap justify-content-around border-bottom">
         <div class="col-md-12 col-sm-24 mb-0 d-flex flex-row  justify-content-center justify-content-md-start text-gray f14 "
             aria-label="breadcrumb">
             <?php i8_breadcrumb(); ?>
@@ -100,7 +100,7 @@ $author_name = (get_post_meta($post->ID, 'hasht-author-name', true)) ? get_post_
             </div>
             <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-24 px-0 px-sm-2 ps-lg-0">
                 <span class="image_frame">
-                    <?php echo i8_the_thumbnail('i8-xl-430-242', 'hover w-100  object-fit-cover i8-h-md-100', $size = array('width' => 410, 'height' => 242), true, 'max-height:275px;', false, true); ?>
+                    <?php echo i8_the_thumbnail('i8-xl-430-242', 'hover w-100 rounded-3  object-fit-cover i8-h-md-100', $size = array('width' => 410, 'height' => 242), true, 'max-height:275px;', false, true); ?>
                 </span>
             </div>
         </div>

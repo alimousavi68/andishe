@@ -27,7 +27,7 @@
     <?php endif; ?>
     <style>
         .bottom-menu {
-            background: var(--i8-light-primary);
+            background: var(--i8-light-primary-darker);
             color: white;
         }
 
@@ -135,8 +135,8 @@
 
 <body dir="rtl" class="bg-main">
 
-<!-- header -->
-    <header id="header" >
+    <!-- header -->
+    <header id="header" class="border-bottom">
         <div id="header-container" class=" header-container">
 
             <div class="topbar container d-flex justify-content-between bg-dark-primary">
@@ -190,40 +190,54 @@
                             </div>
                             <!-- End Tools Btn -->
                         </div>
+                        <?php if (true):
+                            // echo a wordpress post list query
+                            $category_posts = new WP_Query(
+                                array(
+                                    'posts_per_page' => 6,
+                                    'cat' => -1,
+                                    'order' => 'DESC',
+                                    'orderby' => $orderby
+                                )
+                            );
 
-                        <div class="newsticker-container">
+                            ?>
+                            <div class="newsticker-container">
 
-                            <div class="breaking-news-ticker" id="newsTicker2">
-                                <div class="bn-label">اخبار مهم</div>
-                                <div class="bn-news">
-                                    <ul>
-                                        <li><a href="#">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما
-                                                سيلهي القارئ
-                                                عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي
-                                                يقرأها.</a>
-                                        </li>
-                                        <li><a href="#">العديد من برامح النشر المكتبي وبرامح تحرير صفحات الويب</a></li>
-                                        <li><a href="#">هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن
-                                                الغالبية تم
-                                                تعديلها بشكل ما عبر إدخال بعض النوادر</a></li>
-                                        <li><a href="#">لافاَ للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن
-                                                له جذور في
-                                                الأدب اللاتيني </a></li>
-                                    </ul>
+                                <div class="breaking-news-ticker" id="newsTicker2">
+                                    <div class="bn-label">اخبار مهم</div>
+                                    <div class="bn-news">
+                                        <ul>
+                                            <?php if ($category_posts->have_posts()):
+                                                while ($category_posts->have_posts()):
+                                                    $category_posts->the_post(); ?>
+                                                    <li>
+                                                    <a 
+                                                    href="<?php echo get_the_permalink(); ?>"
+                                                    ><?php the_title(); ?></a>
+                                                       
+                                                       
+                                                    </li>
+                                                    <?php
+
+                                                endwhile;
+                                            endif;
+                                            ?>
+
+                                        </ul>
+                                    </div>
+                                    <div class="bn-controls">
+                                        <button><span class="bn-arrow bn-prev"></span></button>
+                                        <button><span class="bn-action"></span></button>
+                                        <button><span class="bn-arrow bn-next"></span></button>
+                                    </div>
                                 </div>
-                                <div class="bn-controls">
-                                    <button><span class="bn-arrow bn-prev"></span></button>
-                                    <button><span class="bn-action"></span></button>
-                                    <button><span class="bn-arrow bn-next"></span></button>
-                                </div>
+
                             </div>
-
-                        </div>
-
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
         </div>
     </header>
- <!-- header  -->
-   
+    <!-- header  -->

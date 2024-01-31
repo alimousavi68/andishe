@@ -22,6 +22,8 @@ class i8_show_posts_pro extends WP_Widget
         'نمایش به صورت گالری ۲' => 'mod12',
         'نمایش به صورت تایم لاین' => 'mod13',
         'نمایش به صورت عکس و متن زیر هم ' => 'mod14',
+        'نمایش لیست پست ها با عکس نویسنده' => 'mod15',
+        'نمایش لیست پست ها+ اولی عکس بزرگ بقیه کوچک' => 'mod16',
 
 
     );
@@ -36,6 +38,7 @@ class i8_show_posts_pro extends WP_Widget
         'hide_title' => false,
         'hide_thumb' => false,
         'hide_excerpt' => true,
+        'hide_category' => false,
         'icon' => '',
         'icon_list_bullet' => '',
         'icon_img' => '',
@@ -83,6 +86,7 @@ class i8_show_posts_pro extends WP_Widget
         $hide_title = esc_attr($instance['hide_title']);
         $hide_thumb = esc_attr($instance['hide_thumb']);
         $hide_excerpt = esc_attr($instance['hide_excerpt']);
+        $hide_category = esc_attr($instance['hide_category']);
         $icon = $instance['icon'];
         $icon_list_bullet = $instance['icon_list_bullet'];
         $icon_img = esc_attr($instance['icon_img']);
@@ -138,6 +142,7 @@ class i8_show_posts_pro extends WP_Widget
         $instance['hide_title'] = sanitize_text_field($new_instance['hide_title']);
         $instance['hide_thumb'] = sanitize_text_field($new_instance['hide_thumb']);
         $instance['hide_excerpt'] = sanitize_text_field($new_instance['hide_excerpt']);
+        $instance['hide_category'] = sanitize_text_field($new_instance['hide_category']);
         $instance['orderby'] = sanitize_text_field($new_instance['orderby']);
         $instance['display_style'] = sanitize_text_field($new_instance['display_style']);
         $instance['show_desktop'] = ($new_instance['show_desktop']);
@@ -156,6 +161,7 @@ class i8_show_posts_pro extends WP_Widget
         $hide_title = $instance['hide_title'];
         $hide_thumb = $instance['hide_thumb'];
         $hide_excerpt = $instance['hide_excerpt'];
+        $hide_category = $instance['hide_category'];
         $title = apply_filters('wp_widget_title', $instance['title']);
         $sub_title = $instance['sub_title'];
         $sub_title_print = (!empty($sub_title)) ? $sub_title : '';
@@ -287,6 +293,20 @@ class i8_show_posts_pro extends WP_Widget
                 require('content/special_post_list_4.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
                 require('content/special_post_list_4.php');
+            }
+        }
+        elseif ($display_style == $values[14]) {
+            if ((wp_is_mobile() && $show_mobile == 'on')) {
+                require('content/simple_post_list_author_base.php');
+            } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
+                require('content/simple_post_list_author_base.php');
+            }
+        }
+        elseif ($display_style == $values[15]) {
+            if ((wp_is_mobile() && $show_mobile == 'on')) {
+                require('content/special_post_list_5.php');
+            } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
+                require('content/special_post_list_5.php');
             }
         }
     }

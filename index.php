@@ -2,25 +2,23 @@
 //header
 get_header();
 ?>
-<div class="top-section container-fluid d-flex flex-column gap-2 px-0 border-bottom border-top">
+<div class="top-section container-fluid d-flex flex-column gap-2 px-0 border-bottom ">
     <div class="top-section-container container d-flex flex-column gap-4 px-0">
         <?php
-        // // todo: if top main is active
+        // todo: if top main is active
         get_template_part('template-parts/top_section'); ?>
     </div>
 </div>
 
 <div class="container d-flex flex-column gap-2 px-0 border-start border-end">
-
     <div class="home-main-box py-3  d-flex flex-column gap-3">
         <?php
-        // // Main box
+        // Main box
         get_template_part('template-parts/home-main-box');
         ?>
     </div>
-
 </div>
-<div class="page-bottom-sidebar py-3 mt-3 ">
+<div class="page-bottom-sidebar py-5 mt-3 ">
     <div class="container">
         <?php
         dynamic_sidebar('hf-sidebar');

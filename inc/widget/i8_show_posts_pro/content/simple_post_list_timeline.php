@@ -8,48 +8,7 @@ if ($hide_title != 'on') {
 }
 echo $sub_title_print . '</div>';
 ?>
-<style>
-    .timeline-item {
-        padding: 3em 1.2em 1.1em;
-        position: relative;
-        color: rgba(0, 0, 0, 0.7);
-        border-right: 2px solid #E5E5E5;
-        font-variation-settings: "wght" 200,"DOTS" 1;
-    }
 
-    .timeline-item p {
-        font-size: 1rem;
-    }
-
-    .timeline-item::before {
-        content: attr(date-is);
-        position: absolute;
-        right: 1.2em;
-        font-weight: bold;
-        top: 1em;
-        display: block;
-        font-weight: 700;
-        font-size: 0.785rem;
-    }
-
-    .timeline-item::after {
-        width: 10px;
-        height: 10px;
-        display: block;
-        top: 1em;
-        position: absolute;
-        right: -7px;
-
-        content: "";
-        border: 2px solid var(--i8-light-complete-color);
-        background: white;
-    }
-
-    .timeline-item:last-child {
-        -o-border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0)) 1 100%;
-        border-image: linear-gradient(to bottom, rgba(229, 229, 229, 1) 60%, rgba(229, 229, 229, 0)) 1 100%;
-    }
-</style>
 <div class="timeline_list pe-2 pe-lg-2 pe-xl-2 pe-md-2 ">
     <?php
     // نمایش محتویات ویجت- نمایش پست ها
@@ -75,7 +34,7 @@ echo $sub_title_print . '</div>';
                     <?php
                     show_post_structure_related_icon(get_the_ID());
                     i8_limit_text(get_the_title(), 100, '...'); ?>
-                    
+
                 </a>
                 <?php if ($hide_excerpt != 'on'): ?>
                     <p>
@@ -88,9 +47,10 @@ echo $sub_title_print . '</div>';
         }
         wp_reset_postdata();
     }
-
-    echo '</div>';
-    echo $args['after_widget'];
-
-
     ?>
+</div>
+<?php
+echo $args['after_widget'];
+
+
+?>

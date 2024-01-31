@@ -2,7 +2,7 @@
 //header
 get_header();
 ?>
-<div class="container px-0">
+<div class="container px-0 border-end border-start" >
     <div class="row mx-0">
 
         <?php
@@ -29,7 +29,7 @@ get_header();
         ?>
 
         <!-- sidebar  -->
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-24 ps-0 pe-xl-2 pe-0 pe-sm-0 i8-sticky sl-sidebar">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-24 ps-0 pe-xl-2 pe-0 pe-sm-0 i8-sticky sl-sidebar border-end">
             <?php dynamic_sidebar('sl-sidebar'); ?>
         </div>
 

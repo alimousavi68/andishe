@@ -40,14 +40,14 @@
 
 </div>
 
-<div class="row d-flex flex-row flex-wrap">
+<div class="row d-flex flex-row flex-wrap border-top">
   <div
-    class=" col-lg-8 col-md-8 col-sm-24 col-xl-8 d-flex flex-column flex-wrap gap-xl-3 gap-lg-3 gap-md-3 gap-sm-0  gap-0 pe-lg-0 pe-md-0 pe-xl-0 ps-lg-2 ps-md-2 ps-xl-2 px-0">
+    class=" col-lg-8 col-md-8 col-sm-24 col-xl-8 d-flex flex-column flex-wrap gap-xl-3 gap-lg-3 gap-md-3 gap-sm-0  gap-0 pe-lg-0 pe-md-0 pe-xl-0 ps-lg-2 ps-md-2 ps-xl-2 px-0  border-start">
     <?php dynamic_sidebar('hmer-sidebar'); ?>
   </div>
   <div
-    class="col-lg-8 col-md-8 col-sm-24 col-xl-8 d-flex flex-column flex-wrap gap-xl-3 gap-lg-3 gap-md-3 gap-sm-0  gap-0 ps-lg-0 ps-md-0 ps-xl-0 pe-lg-2 pe-md-2 pe-xl-2 px-0">
-    <?php dynamic_sidebar('hmel-sidebar'); ?>
+    class="col-lg-8 col-md-8 col-sm-24 col-xl-8 d-flex flex-column flex-wrap gap-xl-3 gap-lg-3 gap-md-3 gap-sm-0  gap-0 ps-lg-0 ps-md-0 ps-xl-0 pe-lg-2 pe-md-2 pe-xl-2 px-0 border-start">
+    <?php dynamic_sidebar('hmec-sidebar'); ?>
   </div>
   <div
     class="col-lg-8 col-md-8 col-sm-24 col-xl-8 d-flex flex-column flex-wrap gap-xl-3 gap-lg-3 gap-md-3 gap-sm-0  gap-0 ps-lg-0 ps-md-0 ps-xl-0 pe-lg-2 pe-md-2 pe-xl-2 px-0">

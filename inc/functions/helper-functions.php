@@ -395,7 +395,7 @@ function build_custom_menu($items, $parent_id = 0)
             if (!empty($submenu)) {
                 // اگر ساب منو داشت
                 $menu .= '<li class="nav-item dropdown">';
-                $menu .= '<a class="nav-link hasht-dropdown-toggle " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="' . esc_url($item->url) . '">' . esc_html($item->title) . '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down mx-1" viewBox="0 0 <?php echo $width; ?> <?php echo $height; ?>">
+                $menu .= '<a class="nav-link  hasht-dropdown-toggle " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="' . esc_url($item->url) . '">' . esc_html($item->title) . '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down mx-1" viewBox="0 0 <?php echo $width; ?> <?php echo $height; ?>">
                 <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
               </svg>' . '</a>';
                 $menu .= '<ul class="dropdown-menu submenu py-2" aria-labelledby="navbarDropdown">';
@@ -403,7 +403,7 @@ function build_custom_menu($items, $parent_id = 0)
                 $menu .= '</ul>';
             } else {
                 //اگر ساب منو نداشت
-                $menu .= '<li class="nav-item">';
+                $menu .= '<li class="nav-item ">';
                 $menu .= '<a class="nav-link ';
 
                 $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";

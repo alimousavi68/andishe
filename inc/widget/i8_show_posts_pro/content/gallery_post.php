@@ -1,7 +1,7 @@
 <?php
 echo $args['before_widget'];
 
-echo '<div class="text-title box-title  ' . $head_font_size . ' fw-7 m-0 me-lg-2 me-md-2">';
+echo '<div class="text-title box-title  ' . $head_font_size . ' fw-7 m-0 me-lg-2 me-md-2 mb-3">';
 if ($hide_title != 'on') {
     echo $args['before_title'] . $icon_print . $title  .  $args['after_title'];
 }
@@ -31,9 +31,9 @@ if ($category_posts->have_posts()) {
         // $primary_cat_color = get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) ? get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) : '#000000';
         // $primary_cat_color_transparent = $primary_cat_color . 'c4';
 ?>
-        <div class="<?php echo $col; ?> px-1">
-            <div class="post-flip-box-container" class="image_frame">
-                <?php echo i8_the_thumbnail('i8-xl-632-486', 'post-flip-box-image object-fit-cover' . $thumb_radius, array("width" => 651, "height" => 486)); ?>
+        <div class="col-xl-12 col-lg-24 col-md-6 col-sm-12 px-1" >
+            <div class="post-flip-box-container image_frame <?php echo $thumb_radius; ?>" >
+                <?php echo i8_the_thumbnail('i8-590-370', 'post-flip-box-image object-fit-cover ' . $thumb_radius , array("width" => 590, "height" => 370)); ?>
 
                 <div class="post-flip-box-link-wrapper">
                     <a href="<?php echo get_the_permalink(); ?>" class="post-flip-box-link i8-blink "></a>
@@ -51,7 +51,7 @@ if ($category_posts->have_posts()) {
 }
 
 if ($category_posts2->have_posts()) {
-    echo '<div class="col-xl-12 col-md-24 col-sm-24 col-24 row">';
+    echo '<div class="col-xl-12 col-md-24 col-sm-24 col-24 row row-gap-4">';
     while ($category_posts2->have_posts()) {
         $category_posts2->the_post();
         $primary_cat = get_post_meta(get_the_ID(), 'hasht_primary_category');
@@ -59,8 +59,8 @@ if ($category_posts2->have_posts()) {
         // $primary_cat_color_transparent = $primary_cat_color . 'c4';
     ?>
         <div class="col-24 col-lg-12 col-md-12 col-sm-24 col-xl-12 px-1">
-            <div class="post-flip-box-container" class="image_frame">
-                <?php echo i8_the_thumbnail('i8-lg-464-340', 'post-flip-box-image object-fit-cover' . $thumb_radius, array("width" => 290, "height" => 231)); ?>
+            <div class="post-flip-box-container <?php echo $thumb_radius; ?> " class="image_frame">
+                <?php echo i8_the_thumbnail('i8-275-172', 'post-flip-box-image object-fit-cover ' . $thumb_radius, array("width" => 279, "height" => 172)); ?>
 
                 <div class="post-flip-box-link-wrapper">
                     <a href="<?php echo get_the_permalink(); ?>" class="post-flip-box-link i8-blink"></a>
