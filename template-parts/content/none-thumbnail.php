@@ -14,7 +14,7 @@ $reference_icon = customizeSVG($reference_icon, 'var(--i8-dark-primary)', 'var(-
 $reference_name = (get_post_meta($post->ID, 'hasht-reference-name', true)) ? get_post_meta($post->ID, 'hasht-reference-name', true) : '';
 $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get_post_meta($post->ID, 'hasht-reference-link', true) : '#';
 ?>
-<div class="col-md-17 col-sm-24 col-xl-18 d-flex flex-column gap-2 pe-0 ps-0 ps-xl-3 ps-lg-3 ps-md-2 ps-sm-0">
+<div class="col-md-17 col-sm-24 col-xl-18 d-flex flex-column gap-2 pe-0 ps-0 ps-xl-3 ps-lg-3 ps-md-2 ps-sm-0 ">
     <?php
     if (is_active_sidebar('st-sidebar')) {
         echo '<div class=" row d-flex py-3 mx-0 align-content-center row-gap-3">';
@@ -23,7 +23,8 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
     }
     ?>
     <!-- breadcrumb -->
-    <div class=" d-flex align-items-top pb-2 mx-0 align-content-center row-gap-3 i8-breadcrumb box p-2 order-2 order-xl-1 order-lg-1  align-items-center  flex-wrap justify-content-around">
+    <div
+        class=" d-flex align-items-top pb-2 mx-0 align-content-center row-gap-3 i8-breadcrumb box p-2 order-2 order-xl-1 order-lg-1  align-items-center  flex-wrap justify-content-around border-bottom">
         <div class="col-md-12 col-sm-24 mb-0 d-flex flex-row  justify-content-center justify-content-md-start text-gray f14 "
             aria-label="breadcrumb">
             <?php i8_breadcrumb(); ?>
@@ -84,7 +85,8 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
     </div>
 
     <!-- intro -->
-    <div class="article d-flex flex-column gap-3 justify-content-between box p-xl-4 p-lg-4 p-md-4 p-0 order-1 order-xl-2 order-lg-2 ">
+    <div
+        class="article d-flex flex-column gap-3 justify-content-between box p-xl-4 p-lg-4 p-md-4 p-0 order-1 order-xl-2 order-lg-2 border-bottom">
 
         <div class="row">
             <?php
@@ -96,9 +98,35 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
             <h1 class="single-title fw-7 h-fs-8 text-justify text-xl-end text-lg-end text-md-end text-sm-justify">
                 <?php the_title(); ?>
             </h1>
-            <p class="f15 text-gray text-justify">
-                <?php i8_limit_text(get_the_excerpt(), 350, '...'); ?>
-            </p>
+            
+            <div class="col">
+
+
+                <p class="f15 text-gray text-justify">
+                    <?php the_excerpt(); ?>
+                </p>
+
+            </div>
+            <div class="col-auto">
+                <?php
+                $author_name = (get_post_meta($post->ID, 'hasht-author-name', true)) ? get_post_meta($post->ID, 'hasht-author-name', true) : '';
+                if ($author_name): ?>
+                    <div class="reference d-flex flex-wrap align-items-center row">
+                        <div class="col-auto px-0">
+                            <?php echo i8_the_thumbnail('i8-80-80', 'author_img_style', $size = array('width' => 50, 'height' => 50), true, '', false, true); ?>
+                        </div>
+                        <div class="col">
+                            <p class="mb-0 f12 text-grey">نویسنده</p>
+                            <p class="mb-0"><span class="mb-0" aria-label="article auhtor name">
+                                    <?php echo $author_name; ?>
+                                </span></p>
+                        </div>
+
+                    </div>
+                    <?php
+                endif;
+                ?>
+            </div>
         </div>
 
     </div>
@@ -122,17 +150,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
                 <?php
             endif;
             ?>
-            <?php
-            if ($author_name):
-                ?>
-                <div class="reference d-flex flex-wrap align-items-center my-4">
-                    <p>نویسنده : <span class="tag-item mb-0" aria-label="article auhtor name">
-                            <?php echo $author_name; ?>
-                        </span></p>
-                </div>
-                <?php
-            endif;
-            ?>
+
 
 
         </div>

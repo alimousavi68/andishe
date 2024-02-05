@@ -13,7 +13,6 @@ $reference_icon = customizeSVG($reference_icon, 'var(--i8-dark-primary)', 'var(-
 
 $reference_name = (get_post_meta($post->ID, 'hasht-reference-name', true)) ? get_post_meta($post->ID, 'hasht-reference-name', true) : '';
 $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get_post_meta($post->ID, 'hasht-reference-link', true) : '#';
-$author_name = (get_post_meta($post->ID, 'hasht-author-name', true)) ? get_post_meta($post->ID, 'hasht-author-name', true) : '';
 ?>
 <div class="col-md-17 col-sm-24 col-xl-18 d-flex flex-column gap-2 pe-0 ps-0 ps-xl-3 ps-lg-3 ps-md-2 ps-sm-0">
 
@@ -78,7 +77,7 @@ $author_name = (get_post_meta($post->ID, 'hasht-author-name', true)) ? get_post_
     </div>
 
     <!-- intro -->
-    <div class="article d-flex flex-row justify-content-between box p-4 mt order-1 order-xl-2 order-lg-2 ">
+    <div class="article d-flex flex-row justify-content-between box p-4 mt order-1 order-xl-2 order-lg-2 border-bottom">
         <div
             class="row w-100 mx-0 d-flex flex-column-reverse flex-xl-row flex-lg-row flex-md-row flex-sm-row row-gap-3">
             <div

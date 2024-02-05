@@ -20,7 +20,7 @@ $two_post_query_args = array(
 $two_post_query = new WP_Query($two_post_query_args);
 ?>
 
-<div class="row row-gap-4 border-end border-start px-3 py-3">
+<div class="row row-gap-4 border-end border-start no-border-on-mobile p-0 p-xl-3 px-lg-3 p-md-3">
     <!--  top-right-sidebar -->
     <div class="col-24 col-xl-18 col-lg-18 col-md-24 main-slider-2 d-flex px-0 gap-0">
         <div class="row">

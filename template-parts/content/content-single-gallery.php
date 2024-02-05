@@ -24,7 +24,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
     ?>
     <!-- breadcrumb -->
     <div
-        class=" d-flex align-items-top pb-2 mx-0 align-content-center row-gap-3 i8-breadcrumb box p-2 order-2 order-xl-1 order-lg-1 align-items-center  flex-wrap justify-content-around">
+        class=" d-flex align-items-top pb-2 mx-0 align-content-center row-gap-3 i8-breadcrumb box p-2 order-2 order-xl-1 order-lg-1 align-items-center  flex-wrap justify-content-around border-bottom">
         <div class="col-md-12 col-sm-24 mb-0 d-flex flex-row  justify-content-center justify-content-md-start text-gray f14 "
             aria-label="breadcrumb">
             <?php i8_breadcrumb(); ?>
@@ -83,7 +83,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
     </div>
 
     <!-- intro -->
-    <div class="article d-flex flex-row justify-content-between box p-4 order-1 order-xl-2 order-lg-2 ">
+    <div class="article d-flex flex-row justify-content-between box p-4 order-1 order-xl-2 order-lg-2  border-bottom">
         <div
             class="row w-100 mx-0 d-flex flex-column-reverse flex-xl-row flex-lg-row flex-md-row flex-sm-row row-gap-3">
             <div
@@ -98,7 +98,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
                     <?php the_title(); ?>
                 </h1>
                 <p class="f15 text-gray text-justify">
-                    <?php i8_limit_text(get_the_excerpt(), 238, '...'); ?>
+                    <?php i8_limit_text(get_the_excerpt(), 380, '...'); ?>
                 </p>
 
 

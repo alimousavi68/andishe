@@ -36,20 +36,20 @@ $category_posts = new WP_Query(
 );
 if ($category_posts->have_posts()): ?>
   <div
-    class="col-24 col-lg-16 col-md-16 col-sm-24 col-xl-16 d-flex flex-column gap-0 i8-border-md-none ps-0 ps-lg-3 ps-md-3 px-0 px-sm-0 single-item">
+    class="col-24 col-lg-16 col-md-16 col-sm-24 col-xl-16 d-flex flex-column gap-0 i8-border-md-none  ps-lg-3 ps-md-3 px-lg-0  single-item">
     <?php
     while ($category_posts->have_posts()):
       $category_posts->the_post();
       ?>
       <a href="<?php the_permalink(); ?>">
-        <?php echo i8_the_thumbnail('i8-590-370', 'single-item-thumb hover w-100 i8-img-fit round-10px', $dimenition = array('width' => 590, 'height' => 370), true, '', false, true); ?>
+        <?php echo i8_the_thumbnail('i8-590-370', 'single-item-thumb hover w-100 i8-img-fit img-fit-size-on-mobile round-10px', $dimenition = array('width' => 590, 'height' => 370), true, '', false, true); ?>
       </a>
       <div class="single-item-data single-big-post-meta-container d-flex flex-column gap-0">
         <!-- <span class="post-subtitle f13 fw-1"><?php $subtitle = get_post_meta(get_the_ID(), '_post_subtitle', true);
         echo ($subtitle) ? $subtitle : ''; ?></span> -->
         <h1 class="post-title l1 pe-2 "
           style="min-height:90px;font-size:30px;border-right: 5px solid var(--i8-light-complete-color);">
-          <a href="<?php echo get_the_permalink(); ?>" class="i8-blink fw-5 fd-0">
+          <a href="<?php echo get_the_permalink(); ?>" class="i8-blink fw-4 fd-0">
             <?php i8_limit_text(get_the_title(), 115, '...'); ?>
           </a>
         </h1>

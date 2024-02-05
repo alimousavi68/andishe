@@ -1,5 +1,5 @@
 <?php ?>
-<div class="row mx-0">
+<div class="row mx-0  border-end border-start">
     <div class="col-xl-17 col-md-24 col-sm-24 d-flex flex-column box px-3 ">
 
         <div class=" row d-flex py-3 mx-0 align-content-center row-gap-1">
@@ -16,9 +16,9 @@
             <form role="search" method="get" class="search-form" action="<?php echo esc_url(home_url('/')); ?>">
                 <div class="i8-wrapper">
                     <div class="i8-container">
-                        <input type="search" class="i8-input w-100" placeholder="عبارت مورد نظر …"
+                        <input type="search" class="i8-input w-100 rounded-3" placeholder="عبارت مورد نظر …"
                             value="<?php echo get_search_query(); ?>" name="s" />
-                        <button type="submit" class="i8-close-btn">
+                        <button type="submit" class="i8-close-btn rounded-3">
                             <?php echo $icon_print; ?>
                         </button>
                     </div>

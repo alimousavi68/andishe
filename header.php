@@ -8,7 +8,8 @@
     <meta name="theme-color"
         content="<?php echo (get_theme_mod('i8_light_primary_color')) ? get_theme_mod('i8_light_primary_color') : '#0A93CD'; ?>" />
     <title>
-        <?php bloginfo('title'); ?>
+        <?php echo wp_title('|', true, 'right'); ?>
+        <?php bloginfo('name'); ?>
     </title>
     <?php wp_head(); ?>
     <?php if (is_singular()): ?>
@@ -136,10 +137,10 @@
 <body dir="rtl" class="bg-main">
 
     <!-- header -->
-    <header id="header" class="border-bottom">
+    <header id="header" class="border-bottom no-border-on-mobile">
         <div id="header-container" class=" header-container">
 
-            <div class="topbar container d-flex justify-content-between bg-dark-primary">
+            <div class="topbar container d-none d-xl-flex d-lg-flex d-md-flex justify-content-between bg-dark-primary">
                 <div class="datecontainer d-flex f12 fw-2 justify-content-end text-black"
                     style="border-right:2px solid var(--i8-dark-complete-color);padding-right:5px;">
                     <?php $date = new jDateTime(true, true, 'Asia/Tehran');
@@ -161,13 +162,14 @@
                     </div>
                     <div class="left-box col d-flex flex-column p-0">
 
-                        <div class="row p-0">
-                            <div class="d-flex flex-row col-21 menu-container">
+                        <div class="row p-0 flex-fill">
+                            <div class="d-none d-xl-flex d-lg-flex d-md-flex flex-row col-21 menu-container">
                                 <?php build_custom_menu_by_location('primary'); ?>
                             </div>
 
                             <!-- Tools Btn -->
-                            <div class="d-flex col-3 justify-content-end align-items-center gap-2 gap-lg-2 gap-sm-2">
+                            <div
+                                class="d-flex col-24 col-xl-3 col-lg-3 col-md-3 justify-content-end align-items-center gap-2 gap-lg-2 gap-sm-2">
                                 <a href="#"
                                     class="dark-mode-switch  px-1 px-lg-0 px-sm-1 round-icon d-flex justify-content-center align-items-center"
                                     alt="dark mode button" aria-label="dark mode button">
@@ -202,9 +204,15 @@
                             );
 
                             ?>
-                            <div class="newsticker-container">
-
-                                <div class="breaking-news-ticker" id="newsTicker2">
+                            <div class="newsticker-container justify-content-end">
+                                <div class="d-flex d-xl-none d-lg-none d-md-none">
+                                    <div class="datecontainer d-flex f12 fw-2 justify-content-end text-black"
+                                        style="border-left:2px solid var(--i8-dark-complete-color);padding-left:5px;">
+                                        <?php $date = new jDateTime(true, true, 'Asia/Tehran');
+                                        echo $date->date("H:i - l j F Y "); ?>
+                                    </div>
+                                </div>
+                                <div class="breaking-news-ticker d-none d-xl-flex d-lg-flex d-md-flex" id="newsTicker2">
                                     <div class="bn-label">اخبار مهم</div>
                                     <div class="bn-news">
                                         <ul>
@@ -212,16 +220,18 @@
                                                 while ($category_posts->have_posts()):
                                                     $category_posts->the_post(); ?>
                                                     <li>
-                                                    <a 
-                                                    href="<?php echo get_the_permalink(); ?>"
-                                                    ><?php the_title(); ?></a>
-                                                       
-                                                       
+                                                        <a href="<?php echo get_the_permalink(); ?>">
+                                                            <?php the_title(); ?>
+                                                        </a>
+
+
                                                     </li>
                                                     <?php
 
                                                 endwhile;
                                             endif;
+                                            // بازنشانی پست فعلی
+                                            wp_reset_postdata();
                                             ?>
 
                                         </ul>

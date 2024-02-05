@@ -47,7 +47,7 @@ function i8_custom_pagination()
 
     if ($paginate_links) {
         ?>
-        <div class="row mt-3 py-2 mx-0 d-flex align-content-center justify-content-center">
+        <div class="row mt-3 py-2 mx-0 d-flex align-content-center justify-content-center border-bottom">
             <div class="number-pagintion py-2 my-2">
                 <div class="pagination pagination-archive">
                     <small>تعداد کل مطالب:
