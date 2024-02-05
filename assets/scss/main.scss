@@ -45,16 +45,16 @@ $display-line-height: 1.5;
   }  
   .img-fit-size-on-mobile {
     height: calc(100vw / 1.594) !important;
-  }
+  } 
   .list-title a, .post-title a{
-    font-size: calc(1.3295rem + .954vw);
+    font-size: calc(1.3295rem + .954vw);  
 
   }
 }
 
 
 
-
+ 
 @media (max-width: 576px) {    
   .i8-border-sm-none{border: 0 !important;};      
 }            

@@ -83,7 +83,7 @@ if ($category_posts->have_posts()): ?>
                 ?>
 
                 <div class="timeline-item" style="padding:2.5em 1.2em 0em" date-is='<?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' پیش'; ?>'>
-                  <a class="i8-blink display-6 fw-2 l22-05 text-normal cursor-pointer text-grey"
+                  <a class="i8-blink display-5 fw-2 l22-05 text-normal cursor-pointer text-grey"
                     href="<?php echo get_the_permalink(); ?>">
                     <?php
                     show_post_structure_related_icon(get_the_ID());

@@ -146,7 +146,7 @@
                 <div class="datecontainer d-flex f12 fw-2 justify-content-end text-black"
                     style="border-right:2px solid var(--i8-dark-complete-color);padding-right:5px;">
                     <?php $date = new jDateTime(true, true, 'Asia/Tehran');
-                    echo $date->date("H:i - l j F Y "); ?>
+                    echo $date->date(" l j F Y "); ?>
                 </div>
                 <div class="social-btn" style="border-left:2px solid var(--i8-dark-complete-color);padding-left:5px;">
                     <?php i8_show_social_icons(18, 18); ?>
@@ -212,7 +212,7 @@
                                     <div class="datecontainer d-flex f12 fw-2 justify-content-end text-black"
                                         style="border-left:2px solid var(--i8-dark-complete-color);padding-left:5px;">
                                         <?php $date = new jDateTime(true, true, 'Asia/Tehran');
-                                        echo $date->date("H:i - l j F Y "); ?>
+                                        echo $date->date(" l j F Y "); ?>
                                     </div>
                                 </div>
                                 <div class="breaking-news-ticker d-none d-xl-flex d-lg-flex d-md-flex" id="newsTicker2">
