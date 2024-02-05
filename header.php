@@ -43,6 +43,8 @@
             height: 30px;
             border-radius: 5px;
             color: var(--i8-light-primary);
+            flex-wrap: nowrap;
+            justify-content: center;
         }
 
         .i8-main-menu-frame {
@@ -169,7 +171,7 @@
 
                             <!-- Tools Btn -->
                             <div
-                                class="d-flex col-24 col-xl-3 col-lg-3 col-md-3 justify-content-end align-items-center gap-2 gap-lg-2 gap-sm-2">
+                                class="d-flex col-24 col-xl-3 col-lg-3 col-md-3 px-0 justify-content-end align-items-center gap-2 gap-lg-2 gap-sm-2">
                                 <a href="#"
                                     class="dark-mode-switch  px-1 px-lg-0 px-sm-1 round-icon d-flex justify-content-center align-items-center"
                                     alt="dark mode button" aria-label="dark mode button">
@@ -189,6 +191,7 @@
                                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                                     </svg>
                                 </a>
+                                <?php i8_mobile_menu('mobile', 'round-icon ', array('21', '21')); ?>
                             </div>
                             <!-- End Tools Btn -->
                         </div>
