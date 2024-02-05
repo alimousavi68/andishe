@@ -2432,6 +2432,6 @@ h2.post-flip-box-title {
 
 @media (max-width:820) {
   .img-fit-size-on-mobile {
-    height: calc(100vw / 1.594) !important;
+    height: calc(100vw / 1.594) !important; 
   }
 }
