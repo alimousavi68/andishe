@@ -152,7 +152,7 @@
             </div>
 
             <div class="header-box d-flex justify-content-center">
-                <div class="d-flex container row p-0 gap-0 justify-content-between">
+                <div class="d-flex container row  gap-0 justify-content-between">
                     <div class="logo-container col">
                         <a href="<?php echo bloginfo('url') ?>" title="<?php bloginfo('title'); ?> " class="logo">
                             <img width="160" height="94" class="header-logo"
