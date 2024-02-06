@@ -52,7 +52,7 @@
 }
 
 .display-3 {
-  font-size: clamp(18px, 2vw, 21px) !important;
+  font-size: clamp(21px, 2vw, 22px) !important;
 }
 
 .display-4 {
@@ -60,7 +60,7 @@
 }
 
 .display-5 {
-  font-size: clamp(13px, 2vw, 15px) !important;
+  font-size: clamp(14px, 2vw, 15px) !important;
 }
 
 .display-6 {
@@ -1230,7 +1230,7 @@ img.hover:hover {
   }
 
   .simple-list img {
-    width: 140px !important;
+    /* width: 140px !important; */
   }
 
   .mini-article.simple-list .image_frame>img {

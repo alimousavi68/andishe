@@ -26066,8 +26066,8 @@ textarea.form-control-lg {
     height: calc(100vw / 1.594) !important;
   }
 
-  .list-title a, .post-title a {
-    font-size: calc(1.3295rem + .954vw);
+  .top-section .list-title a, .top-section .post-title a {
+    font-size: calc(1.1595rem + .954vw);
   }
 }
 @media (max-width: 576px) {

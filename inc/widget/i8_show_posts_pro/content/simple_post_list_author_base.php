@@ -31,7 +31,7 @@ if ($category_posts->have_posts()) {
         ?>
 
         <div
-            class="<?php echo $col; ?> d-flex mb-3 align-items-start gap-2 align-items-start  px-xl-3 px-lg-3 px-md-3 px-sm-1 px-1  pb-3 <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?>">
+            class="<?php echo $col; ?> d-flex mb-3 justify-content-between gap-2 align-items-start  px-xl-3 px-lg-3 px-md-3 px-sm-1 px-1  pb-3 <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?>">
 
             <div class="post-title">
                 <a class="i8-blink <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l22-05 text-normal"

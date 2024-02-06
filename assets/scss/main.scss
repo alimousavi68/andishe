@@ -36,18 +36,18 @@ $display-line-height: 1.5;
 @import '../css/custom-style.css';      
 @import '../css/news-ticker.css';      
 @import '../css/jquerysctipttop.css';         
-      
+       
     
 /*  add Custom style for bootstrap borders */
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 820px) { 
   .no-border-on-mobile{
     border: none !important; 
   }  
-  .img-fit-size-on-mobile {
+  .img-fit-size-on-mobile {  
     height: calc(100vw / 1.594) !important;
   } 
-  .list-title a, .post-title a{
-    font-size: calc(1.3295rem + .954vw);  
+  .top-section .list-title a,.top-section .post-title a{
+    font-size: calc(1.1595rem + .954vw);  
 
   }
 }
