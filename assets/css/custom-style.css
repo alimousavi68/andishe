@@ -710,6 +710,13 @@ textarea {
   background-color: var(--i8-light-primary) !important;
 }
 
+.widget {
+  margin-bottom: 12px;
+}
+.widget:last-child {
+  border-bottom: 0px !important;
+}
+
 footer {
   background-color: var(--i8-light-primary-darker);
 }
@@ -2153,9 +2160,7 @@ footer .nav-item a:hover {
   border-bottom: none !important;
 }
 
-.widget {
-  margin-bottom: 12px;
-}
+
 
 /* flip box style */
 /* سبک‌های اختصاصی */

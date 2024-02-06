@@ -9,14 +9,14 @@
     <?php if (is_active_sidebar('fr-sidebar') || is_active_sidebar('fc-sidebar') || is_active_sidebar('fl-sidebar')): ?>
       <div class="row border-bottom py-3">
         <div
-          class="align-items-center  col-md-12 col-sm-24 col-xl-5 d-flex flex-column justify-content-center align-content-center ">
+          class="fr-sidebar align-items-center  col-md-12 col-sm-24 col-xl-5 d-flex flex-column justify-content-center align-content-center ">
           <?php
           dynamic_sidebar('fr-sidebar');
           ?>
         </div>
 
         <div class="col-24 col-lg-14 col-md-14 col-md-24 col-sm-24 col-xl-14 d-flex flex-row  gap-3">
-          <div class="row w-100 align-content-center row-gap-3">
+          <div class="fc-sidebar row w-100 align-content-center row-gap-3">
             <?php
             dynamic_sidebar('fc-sidebar');
             ?>
@@ -24,7 +24,7 @@
         </div>
 
         <div
-          class="col-lg-5 col-md-12 col-md-5 col-sm-24 col-xl-5 d-flex justify-content-center justify-content-lg-end align-content-center order-md-2">
+          class="fl-sidebar col-lg-5 col-md-12 col-md-5 col-sm-24 col-xl-5 d-flex justify-content-center justify-content-lg-end align-content-center order-md-2">
           <?php
           dynamic_sidebar('fl-sidebar');
           ?>

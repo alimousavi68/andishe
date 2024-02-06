@@ -18,7 +18,7 @@ get_header();
         ?>
     </div>
 </div>
-<div class="page-bottom-sidebar py-5 mt-3 ">
+<div class="hf-sidebar page-bottom-sidebar py-5 mt-3 ">
     <div class="container">
         <?php
         dynamic_sidebar('hf-sidebar');

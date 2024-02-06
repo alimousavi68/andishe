@@ -1194,3 +1194,12 @@ add_action('wp_footer', 'custom_lightbox_gallery', 10, 1);
 
 
 // End Image gallery
+
+// Check if there are multiple widgets in sidebar
+function has_multiple_widgets_in_sidebar( $sidebar_id ) {
+    $widgets = wp_get_sidebars_widgets();
+    if ( isset( $widgets[ $sidebar_id ] ) && count( $widgets[ $sidebar_id ] ) > 1 ) {
+        return true;
+    }
+    return false;
+}

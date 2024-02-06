@@ -134,7 +134,23 @@
         align-content: center;
         align-items: center;
     }
+
+    <?php
+    $register_sidebars = get_option('sidebars_widgets');
+    foreach ($register_sidebars as $sidebar_id => $value) {
+        $is_multiple_widgets = has_multiple_widgets_in_sidebar($sidebar_id);
+        if ($is_multiple_widgets) {
+            echo ('.' . $sidebar_id . ' .widget{ border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) }');
+            echo "\n";
+
+        }
+    }
+    ?>
 </style>
+
+
+
+
 
 <body dir="rtl" class="bg-main">
 

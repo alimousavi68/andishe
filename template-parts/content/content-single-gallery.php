@@ -17,7 +17,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
 <div class="col-md-17 col-sm-24 col-xl-18 d-flex flex-column gap-2 pe-0 ps-0 ps-xl-3 ps-lg-3 ps-md-2 ps-sm-0">
     <?php
     if (is_active_sidebar('st-sidebar')) {
-        echo '<div class=" row d-flex py-3 mx-0 align-content-center row-gap-3">';
+        echo '<div class="st-sidebar row d-flex py-3 mx-0 align-content-center row-gap-3">';
         dynamic_sidebar('st-sidebar');
         echo '</div>';
     }
@@ -233,7 +233,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
 
         <?php
         if (is_active_sidebar('sf-sidebar')) {
-            echo '<div class=" row d-flex py-3 mx-0 align-content-center row-gap-3">';
+            echo '<div class="sf-sidebar row d-flex py-3 mx-0 align-content-center row-gap-3">';
             dynamic_sidebar('sf-sidebar');
             echo '</div>';
         }

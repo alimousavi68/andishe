@@ -44,7 +44,7 @@
 
     <!-- sidebar  -->
     <div
-        class="col-xl-7 col-md-24 col-sm-24 ps-0 pt-4 pt-xl-0 pt-md-4 pt-sm-4 pe-xl-3 pe-0 pe-sm-0 i8-sticky border-end ">
+        class="al-sidebar col-xl-7 col-md-24 col-sm-24 ps-0 pt-4 pt-xl-0 pt-md-4 pt-sm-4 pe-xl-3 pe-0 pe-sm-0 i8-sticky border-end ">
         <?php
         dynamic_sidebar('al-sidebar');
         ?>

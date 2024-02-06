@@ -19,13 +19,13 @@ echo $sub_title_print . '</div>';
 </style>
 
 
-<div class="col-24 col-xl-24  col-lg-24 col-md-24 col-sm-24 multi-items d-flex gap-2 px-0 border-bottom">
+<div class="col-24 col-xl-24  col-lg-24 col-md-24 col-sm-24 multi-items d-flex gap-2 px-0">
   <div class="row row-gap-3">
     <?php
-
+    $count = 1;
     $category_posts2 = new WP_Query(
       array(
-        'posts_per_page' => 1,
+        'posts_per_page' => $count,
         'cat' => $cat,
         'order' => 'DESC',
         'orderby' => $orderby
@@ -38,8 +38,7 @@ echo $sub_title_print . '</div>';
       while ($category_posts2->have_posts()) {
         $category_posts2->the_post();
         ?>
-        <div
-          class="multi-item d-flex flex-column gap-2   border-bottom">
+        <div class="multi-item d-flex flex-column gap-2 border-bottom">
           <a href="<?php the_permalink(); ?>" class="">
             <?php echo i8_the_thumbnail('i8-380-238', 'hover multi-item-thumb w-100 i8-img-fit ' . $thumb_radius, $dimenition = array('width' => $thumb_width, 'height' => $thumb_height), true, '', false, true); ?>
           </a>
@@ -87,7 +86,7 @@ echo $sub_title_print . '</div>';
         ?>
 
         <div
-          class="multi-items border-bottom d-flex flex-column gap-2 px-xl-3 px-lg-3 px-md-3  <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : ''; ?>">
+          class="multi-items d-flex flex-column gap-2 px-xl-3 px-lg-3 px-md-3 <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?>">
           <div class="single-item-data special-single-item-data d-flex flex-column gap-1 justify-content-between">
             <div class="title-box">
               <?php
