@@ -10,7 +10,7 @@ echo $sub_title_print . '</div>';
 ?>
 <style>
   .multi-items {
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
   }
 
   .multi-items:last-child {
@@ -19,7 +19,7 @@ echo $sub_title_print . '</div>';
 </style>
 
 
-<div class="col-24 col-xl-24  col-lg-24 col-md-24 col-sm-24 multi-items d-flex gap-2 px-0">
+<div class="col-24 col-xl-24  col-lg-24 col-md-24 col-sm-24 multi-items d-flex gap-2 px-0 border-bottom">
   <div class="row row-gap-3">
     <?php
 
@@ -87,7 +87,7 @@ echo $sub_title_print . '</div>';
         ?>
 
         <div
-          class="multi-items d-flex flex-column gap-2 px-1 px-xl-3 px-lg-3 px-md-3  <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : ''; ?>">
+          class="multi-items border-bottom d-flex flex-column gap-2 px-xl-3 px-lg-3 px-md-3  <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : ''; ?>">
           <div class="single-item-data special-single-item-data d-flex flex-column gap-1 justify-content-between">
             <div class="title-box">
               <?php

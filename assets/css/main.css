@@ -26058,6 +26058,10 @@ textarea.form-control-lg {
 }
 /*  add Custom style for bootstrap borders */
 @media screen and (max-width: 820px) {
+  .multi-item-thumb {
+    height: auto !important;
+  }
+
   .no-border-on-mobile {
     border: none !important;
   }

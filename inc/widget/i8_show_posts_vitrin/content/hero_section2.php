@@ -17,9 +17,7 @@ if ($hide_title != 'on') {
     border-bottom: 1px solid var(--bs-border-color);
   }
 
-  .multi-item-thumb {
-    height: auto;
-  }
+  
 
   @media(min-width:820px) {
     .secondray-item {
