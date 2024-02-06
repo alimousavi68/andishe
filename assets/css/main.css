@@ -26067,7 +26067,7 @@ textarea.form-control-lg {
   }
 
   .top-section .list-title a, .top-section .post-title a {
-    font-size: calc(1.1595rem + .954vw);
+    font-size: calc(1.10195rem + .954vw);
   }
 }
 @media (max-width: 576px) {
