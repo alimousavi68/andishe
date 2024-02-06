@@ -56,11 +56,11 @@
 }
 
 .display-4 {
-  font-size: clamp(15px, 2vw, 18px) !important;
+  font-size: clamp(15px, 2vw, 16px) !important;
 }
 
 .display-5 {
-  font-size: clamp(14px, 2vw, 15px) !important;
+  font-size: clamp(15px, 2vw, 15px) !important;
 }
 
 .display-6 {

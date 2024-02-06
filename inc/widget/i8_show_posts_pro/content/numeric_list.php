@@ -8,7 +8,7 @@ if ($hide_title != 'on') {
 }
 echo $sub_title_print . '</div>';
 
-echo '<ul class="numeric-list-content d-flex flex-wrap mb-0 row-gap-4 pt-2">';
+echo '<ul class="numeric-list-content d-flex flex-wrap mb-0 row-gap-0 row-gap-xl-4 row-gap-lg-4 row-gap-md-4 pt-2">';
 // نمایش محتویات ویجت- نمایش پست ها
 $category_posts = new WP_Query(array(
     'posts_per_page' => $num,
