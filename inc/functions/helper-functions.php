@@ -484,8 +484,8 @@ function build_custom_menu_by_id($menu_id, $style_type = 'row')
 
     if ($menu_items) {
         $type_class = ($style_type == 'column') ? 'flex-column menu-fix' : 'flex-row';
-        $gap = ($style_type == 'column') ? 'column-gap-0' : 'column-gap-3';
-        echo '<ul class="navbar-nav mb-lg-0 menu-list d-flex ' . $type_class . ' g-2  px-0 flex-wrap ' . $gap . ' ">';
+        $gap = ($style_type == 'column') ? 'gap-0' : 'gap-3';
+        echo '<ul class="navbar-nav mb-lg-0 menu-list d-flex justify-content-center ' . $type_class . ' g-2  px-0 flex-wrap ' . $gap . ' ">';
         echo build_custom_menu($menu_items);
         echo '</ul>';
     }

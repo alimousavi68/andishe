@@ -1642,7 +1642,7 @@ tr th:last-child {
 
 @media (min-width: 960px) {
   .special-single-item-data {
-    min-height: 132px;
+    min-height: 100px;
   }
   
   .h-fs-1 {

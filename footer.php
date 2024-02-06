@@ -16,7 +16,7 @@
         </div>
 
         <div class="col-24 col-lg-14 col-md-14 col-md-24 col-sm-24 col-xl-14 d-flex flex-row  gap-3">
-          <div class="row w-100 align-content-center">
+          <div class="row w-100 align-content-center row-gap-3">
             <?php
             dynamic_sidebar('fc-sidebar');
             ?>

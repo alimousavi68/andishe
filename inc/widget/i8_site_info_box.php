@@ -253,7 +253,7 @@ class i8_site_info_box extends WP_Widget
             <?php endif; ?>
             <?php if ($hide_social_box != 'on') : ?>
                 <div class="site-info-social-links">
-                    <div class="d-flex justify-content-center column-gap-5">
+                    <div class="d-flex justify-content-center column-gap-xl-5 column-gap-lg-5 column-gap-md-3 column-gap-3">
                         <a class="p-0 p-lg-0 p-sm-1" href="<?php echo $social_link_1; ?>" alt="Social network link" aria-label="Social network link">
                             <?php echo $social_icon_1; ?>
                         </a>

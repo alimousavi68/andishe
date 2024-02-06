@@ -23,7 +23,7 @@ $category_posts2 = new WP_Query(array(
     'offset'    => 1,
     'orderby' => $orderby
 ));
-echo '<div class="row gallery">';
+echo '<div class="row gallery row-gap-4">';
 if ($category_posts->have_posts()) {
     while ($category_posts->have_posts()) {
         $category_posts->the_post();
@@ -31,7 +31,7 @@ if ($category_posts->have_posts()) {
         // $primary_cat_color = get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) ? get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) : '#000000';
         // $primary_cat_color_transparent = $primary_cat_color . 'c4';
 ?>
-        <div class="col-xl-12 col-lg-24 col-md-6 col-sm-12 px-1" >
+        <div class="col-xl-12 col-lg-24 col-md-6 col-sm-12 px-xl-1 px-lg-1 px-md-1 px-3" >
             <div class="post-flip-box-container image_frame <?php echo $thumb_radius; ?>" >
                 <?php echo i8_the_thumbnail('i8-590-370', 'post-flip-box-image object-fit-cover ' . $thumb_radius , array("width" => 590, "height" => 370)); ?>
 
@@ -40,7 +40,7 @@ if ($category_posts->have_posts()) {
                 </div>
                 <div class="post-flip-box-overlay d-flex align-items-end">
                     <h2 class="post-flip-box-title0">
-                        <a class="f31 post-flip-box-link l1 fw-7 fd-7  text-white i8-blink" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
+                        <a class="display-3 post-flip-box-link l1 fw-7 fd-7  text-white i8-blink" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 100, '...'); ?></a>
                     </h2>
                 </div>
             </div>
@@ -67,7 +67,7 @@ if ($category_posts2->have_posts()) {
                 </div>
                 <div class="post-flip-box-overlay d-flex align-items-end">
                     <h2 class="post-flip-box-title0">
-                        <a class="<?php echo $title_font_size; ?> post-flip-box-link l1  i8-blink fw-3 fd-7 text-white" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
+                        <a class="<?php echo $title_font_size; ?> post-flip-box-link l1 i8-blink fw-4 fd-7 text-white" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 110, '...'); ?></a>
                     </h2>
                 </div>
             </div>
