@@ -713,6 +713,7 @@ textarea {
 .widget {
   margin-bottom: 12px;
 }
+
 .widget:last-child {
   border-bottom: 0px !important;
 }
@@ -1219,47 +1220,6 @@ img.hover:hover {
   margin-bottom: 24px;
 }
 
-@media (min-width: 576px) {}
-
-@media (max-width: 576px) {
-
-  .article {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  #footer .footer-logo {
-    width: 70% !important;
-    object-fit: cover;
-    text-align: center;
-  }
-
-  .simple-list img {
-    /* width: 140px !important; */
-  }
-
-  .mini-article.simple-list .image_frame>img {
-    max-width: 120px;
-  }
-
-  .i8-sticky {
-    position: inherit !important;
-  }
-
-  h2.post-flip-box-title {
-    top: 100px !important;
-  }
-
-  .post-flip-box-title a {
-    font-size: 1.4rem !important;
-  }
-
-  .post-flip-box-image {
-    width: 100%;
-    height: auto !important;
-  }
-
-}
 
 
 /* Animation Effect for icons beat fade */
@@ -1481,222 +1441,7 @@ tr th:last-child {
 
 
 
-@media (min-width: 768px) {
 
-
-  .i8-sticky {
-    position: sticky;
-    top: 10px;
-    height: fit-content;
-  }
-
-  h1.single-title {
-    font-size: 32px;
-  }
-
-  .i8-h-md-100 {
-    height: 100%;
-  }
-
-  .h-fs-1 {
-    font-size: 12px;
-    line-height: 170%;
-  }
-
-  .h-fs-2 {
-    font-size: 13px;
-    line-height: 170%;
-  }
-
-  .h-fs-3 {
-    font-size: 15px;
-    line-height: 170%;
-  }
-
-  .h-fs-4 {
-    font-size: 17px;
-    line-height: 170%;
-  }
-
-  .h-fs-5 {
-    font-size: 20px;
-    line-height: 170%;
-  }
-
-  .h-fs-6 {
-    font-size: 23px;
-    line-height: 170%;
-  }
-
-  .h-fs-7 {
-    font-size: 25px;
-    line-height: 170%;
-  }
-
-  .h-fs-8 {
-    font-size: 28px;
-    line-height: 170%;
-  }
-
-}
-
-@media (max-width: 768px) {
-
-  .image_frame,
-  .image_frame img,
-  .image_frame_2 img {
-    height: auto !important;
-  }
-
-  .single-item-data {
-    height: auto !important;
-  }
-
-
-
-  .h-fs-1 {
-    font-size: 11px;
-    line-height: 170%;
-  }
-
-  .h-fs-2 {
-    font-size: 12px;
-    line-height: 170%;
-  }
-
-  .h-fs-3 {
-    font-size: 13px;
-    line-height: 170%;
-  }
-
-  .h-fs-4 {
-    font-size: 15px;
-    line-height: 170%;
-  }
-
-  .h-fs-5 {
-    font-size: 18px;
-    line-height: 170%;
-  }
-
-  .h-fs-6 {
-    font-size: 21px;
-    line-height: 170%;
-  }
-
-  .h-fs-7 {
-    font-size: 23px;
-    line-height: 170%;
-  }
-
-  .h-fs-8 {
-    font-size: 25px;
-    line-height: 170%;
-  }
-
-  .box {
-    padding: 12px !important;
-  }
-
-  .big-post img {
-    max-height: 231px !important;
-  }
-
-  .main-slider .big-post .card-title {
-    font-size: 19px;
-  }
-
-  .main-slider .big-post,
-  .main-slider .small-post {
-    /* padding: 0 ; */
-  }
-
-
-
-
-  .darkmode-btn {}
-
-  .mt-sx-3 {
-    margin-top: 15px;
-  }
-
-  .comment-avatar {
-    width: 32px;
-    height: 32px;
-  }
-}
-
-@media (max-width: 992px) {
-  
-  .first-main-img {
-    height: 300px;
-  }
-
-  .second-main-img,
-  .third-main-img {
-    height: 231px;
-    margin-top: 15px;
-  }
-
-  .btn-main {
-    width: 100%;
-    margin-top: 15px;
-    border-radius: 5px;
-  }
-
-
-}
-
-@media (min-width: 960px) {
-  .special-single-item-data {
-    min-height: 100px;
-  }
-  
-  .h-fs-1 {
-    font-size: 13px;
-    line-height: 170%;
-  }
-
-  .h-fs-2 {
-    font-size: 15px;
-    line-height: 170%;
-  }
-
-  .h-fs-3 {
-    font-size: 17px;
-    line-height: 170%;
-  }
-
-  .h-fs-4 {
-    font-size: 19px;
-    line-height: 170%;
-  }
-
-  .h-fs-5 {
-    font-size: 22px;
-    line-height: 170%;
-  }
-
-  .h-fs-6 {
-    font-size: 25px;
-    line-height: 170%;
-  }
-
-  .h-fs-7 {
-    font-size: 25px;
-    line-height: 170%;
-  }
-
-  .h-fs-8 {
-    font-size: 31px;
-    line-height: 170%;
-  }
-}
-
-
-@media (min-width: 1400px) {}
-
-@media (min-width: 576px) {}
 
 
 .card {
@@ -2038,51 +1783,6 @@ footer .nav-item a:hover {
 
 /* box title */
 
-/* rest bootstrap container class in small screen */
-@media (min-width: 992px) {
-
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm {
-    /* max-width: 99% !important; */
-  }
-}
-
-@media (max-width: 1200px) {
-
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm {
-    max-width: 99% !important;
-  }
-
-}
-
-@media (max-width: 768px) {
-
-
-  .container,
-  .container-md,
-  .container-sm {
-    max-width: 99% !important;
-  }
-}
-
-@media (max-width: 576px) {
-
-  .archive-thumb img {
-    height: 50vw !important;
-  }
-
-  .container,
-  .container-sm {
-    max-width: 99% !important;
-  }
-}
-
-/* End rest bootstrap container class in small screen */
 
 /* global style */
 .i8-img-fit {
@@ -2096,38 +1796,8 @@ footer .nav-item a:hover {
 /*  add Custom style for bootstrap borders */
 /* this code is not work here. the copy of this code in main.scss file because here code order priority first and there last  */
 /* for this reason just put here for remember */
-@media (max-width: 576px) {
-  .i8-border-sm-none {
-    border: 0 !important;
-  }
 
-  ;
-}
 
-@media (max-width: 768px) {
-  .i8-border-md-none {
-    border: 0 !important;
-  }
-
-  ;
-}
-
-@media (max-width: 992px) {
-  
-  .i8-border-lg-none {
-    border: 0 !important;
-  }
-
-  ;
-}
-
-@media (min-width: 992px) {
-  .i8-border-xl-none {
-    border: 0 !important;
-  }
-
-  ;
-}
 
 .navbar-nav .dropdown-menu {
   position: absolute !important;
@@ -2438,10 +2108,311 @@ h2.post-flip-box-title {
   width: 100% !important;
 }
 
+/* Media Querys */ 
+
+@media (max-width: 576px) {
+  .archive-thumb img {
+    height: 50vw !important;
+  }
+
+  .container,
+  .container-sm {
+    max-width: 99% !important;
+  }
+
+  .i8-border-sm-none {
+    border: 0 !important;
+  }
+
+  ;
+
+  .article {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #footer .footer-logo {
+    width: 70% !important;
+    object-fit: cover;
+    text-align: center;
+  }
+
+  .simple-list img {
+    /* width: 140px !important; */
+  }
+
+  .mini-article.simple-list .image_frame>img {
+    max-width: 120px;
+  }
+
+  .i8-sticky {
+    position: inherit !important;
+  }
+
+  h2.post-flip-box-title {
+    top: 100px !important;
+  }
+
+  .post-flip-box-title a {
+    font-size: 1.4rem !important;
+  }
+
+  .post-flip-box-image {
+    width: 100%;
+    height: auto !important;
+  }
 
 
-@media (max-width:820) {
+}
+
+@media (max-width: 768px) {
+
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 99% !important;
+  }
+
+  .i8-border-md-none {
+    border: 0 !important;
+  }
+
+  ;
+
+  .image_frame,
+  .image_frame img,
+  .image_frame_2 img {
+    height: auto !important;
+  }
+
+  .single-item-data {
+    height: auto !important;
+  }
+
+
+
+  .h-fs-1 {
+    font-size: 11px;
+    line-height: 170%;
+  }
+
+  .h-fs-2 {
+    font-size: 12px;
+    line-height: 170%;
+  }
+
+  .h-fs-3 {
+    font-size: 13px;
+    line-height: 170%;
+  }
+
+  .h-fs-4 {
+    font-size: 15px;
+    line-height: 170%;
+  }
+
+  .h-fs-5 {
+    font-size: 18px;
+    line-height: 170%;
+  }
+
+  .h-fs-6 {
+    font-size: 21px;
+    line-height: 170%;
+  }
+
+  .h-fs-7 {
+    font-size: 23px;
+    line-height: 170%;
+  }
+
+  .h-fs-8 {
+    font-size: 25px;
+    line-height: 170%;
+  }
+
+  .box {
+    padding: 12px !important;
+  }
+
+  .big-post img {
+    max-height: 231px !important;
+  }
+
+  .main-slider .big-post .card-title {
+    font-size: 19px;
+  }
+
+  .main-slider .big-post,
+  .main-slider .small-post {
+    /* padding: 0 ; */
+  }
+
+
+
+
+  .darkmode-btn {}
+
+  .mt-sx-3 {
+    margin-top: 15px;
+  }
+
+  .comment-avatar {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 820px)  {
   .img-fit-size-on-mobile {
-    height: calc(100vw / 1.594) !important; 
+    height: calc(100vw / 1.594) !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .i8-border-xl-none {
+    border: 0 !important;
+  }
+
+  ;
+
+  .i8-border-lg-none {
+    border: 0 !important;
+  }
+
+  ;
+
+  .first-main-img {
+    height: 300px;
+  }
+
+  .second-main-img,
+  .third-main-img {
+    height: 231px;
+    margin-top: 15px;
+  }
+
+  .btn-main {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 5px;
+  }
+
+
+}
+
+@media (max-width: 1200px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    max-width: 99% !important;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+
+  .i8-sticky {
+    position: sticky;
+    top: 10px;
+    height: fit-content;
+  }
+
+  h1.single-title {
+    font-size: 32px;
+  }
+
+  .i8-h-md-100 {
+    height: 100%;
+  }
+
+  .h-fs-1 {
+    font-size: 12px;
+    line-height: 170%;
+  }
+
+  .h-fs-2 {
+    font-size: 13px;
+    line-height: 170%;
+  }
+
+  .h-fs-3 {
+    font-size: 15px;
+    line-height: 170%;
+  }
+
+  .h-fs-4 {
+    font-size: 17px;
+    line-height: 170%;
+  }
+
+  .h-fs-5 {
+    font-size: 20px;
+    line-height: 170%;
+  }
+
+  .h-fs-6 {
+    font-size: 23px;
+    line-height: 170%;
+  }
+
+  .h-fs-7 {
+    font-size: 25px;
+    line-height: 170%;
+  }
+
+  .h-fs-8 {
+    font-size: 28px;
+    line-height: 170%;
+  }
+
+}
+
+@media (min-width: 960px) {
+  .special-single-item-data {
+    min-height: 100px;
+  }
+
+  .h-fs-1 {
+    font-size: 13px;
+    line-height: 170%;
+  }
+
+  .h-fs-2 {
+    font-size: 15px;
+    line-height: 170%;
+  }
+
+  .h-fs-3 {
+    font-size: 17px;
+    line-height: 170%;
+  }
+
+  .h-fs-4 {
+    font-size: 19px;
+    line-height: 170%;
+  }
+
+  .h-fs-5 {
+    font-size: 22px;
+    line-height: 170%;
+  }
+
+  .h-fs-6 {
+    font-size: 25px;
+    line-height: 170%;
+  }
+
+  .h-fs-7 {
+    font-size: 25px;
+    line-height: 170%;
+  }
+
+  .h-fs-8 {
+    font-size: 31px;
+    line-height: 170%;
   }
 }
