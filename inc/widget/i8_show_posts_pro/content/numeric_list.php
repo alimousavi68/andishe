@@ -29,7 +29,7 @@ if ($category_posts->have_posts()) {
                             <?php //echo i8_primary_category(get_the_ID()) ?>
                         </span> -->
                         <a href="<?php the_permalink(); ?>"
-                            class="<?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> i8-blink">
+                            class="<?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> i8-blink text-gray">
                             <?php i8_limit_text(get_the_title(), 70, '...'); ?>
                         </a>
                     </div>

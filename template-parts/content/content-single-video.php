@@ -31,7 +31,6 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
         <div
             class="d-xl-flex d-lg-flex d-md-flex  col-md-12 col-sm-24 mb-0 flex-row  justify-content-center justify-content-md-end text-gray f14">
             <div class="d-flex justify-content-center gap-3 gap-lg-2 gap-sm-1">
-
                 <?php if (get_post_meta(get_the_ID(), 'i8_hide_date', true) != 'on'): ?>
                     <div class="d-flex align-items-center gap-2">
                         <p class="text-gray f14 m-0" style="line-height: 100%;padding-top: 5px;">
@@ -39,25 +38,24 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
                         </p>
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="21px" height="21px" fill="none" stroke-width="1.5"
-                            viewBox="0 0 24 24" color="var(--i8-light-primary)">
-                            <path stroke="var(--i8-light-primary)" stroke-width="1.5" stroke-linecap="round"
+                            viewBox="0 0 24 24" color="" class="share-icon">
+                            <path stroke="" stroke-width="1.5" stroke-linecap="round"
                                 stroke-linejoin="round" d="M12 6v6h6"></path>
-                            <path stroke="var(--i8-light-primary)" stroke-width="1.5" stroke-linecap="round"
+                            <path stroke="" stroke-width="1.5" stroke-linecap="round"
                                 stroke-linejoin="round"
                                 d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"></path>
                         </svg>
                     </div>
                 <?php endif; ?>
-
                 <a class="p-0 p-lg-0 p-sm-1" href="#share-btn" alt="copy page link button"
                     aria-label="copy page link button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="none" stroke-width="1.5"
-                        viewBox="0 0 24 24" color="var(--i8-light-primary)">
-                        <path stroke="var(--i8-light-primary)" stroke-width="1.5" stroke-linecap="round"
+                        viewBox="0 0 24 24" color="" class="share-icon">
+                        <path stroke="" stroke-width="1.5" stroke-linecap="round"
                             stroke-linejoin="round"
                             d="M14 11.998C14 9.506 11.683 7 8.857 7H7.143C4.303 7 2 9.238 2 11.998c0 2.378 1.71 4.368 4 4.873a5.3 5.3 0 0 0 1.143.124">
                         </path>
-                        <path stroke="var(--i8-light-primary)" stroke-width="1.5" stroke-linecap="round"
+                        <path stroke="" stroke-width="1.5" stroke-linecap="round"
                             stroke-linejoin="round"
                             d="M10 11.998c0 2.491 2.317 4.997 5.143 4.997h1.714c2.84 0 5.143-2.237 5.143-4.997 0-2.379-1.71-4.37-4-4.874A5.304 5.304 0 0 0 16.857 7">
                         </path>
@@ -66,14 +64,14 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
                 <a class="p-0 p-lg-0 p-sm-1" id="printButton" href="" alt="print page button"
                     aria-label="print page button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="none" stroke-width="1.5"
-                        viewBox="0 0 24 24" color="var(--i8-light-primary)">
-                        <path stroke="var(--i8-light-primary)" stroke-width="1.5"
+                        viewBox="0 0 24 24" color="" class="share-icon">
+                        <path stroke="" stroke-width="1.5"
                             d="M17.571 18H20.4a.6.6 0 0 0 .6-.6V11a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v6.4a.6.6 0 0 0 .6.6h2.829M8 7V3.6a.6.6 0 0 1 .6-.6h6.8a.6.6 0 0 1 .6.6V7">
                         </path>
-                        <path stroke="var(--i8-light-primary)" stroke-width="1.5"
+                        <path stroke="" stroke-width="1.5"
                             d="M6.098 20.315 6.428 18l.498-3.485A.6.6 0 0 1 7.52 14h8.96a.6.6 0 0 1 .594.515L17.57 18l.331 2.315a.6.6 0 0 1-.594.685H6.692a.6.6 0 0 1-.594-.685Z">
                         </path>
-                        <path stroke="var(--i8-light-primary)" stroke-width="1.5" stroke-linecap="round"
+                        <path stroke="" stroke-width="1.5" stroke-linecap="round"
                             stroke-linejoin="round" d="m17 10.01.01-.011"></path>
                     </svg>
                 </a>

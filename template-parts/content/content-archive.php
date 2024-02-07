@@ -11,7 +11,7 @@
                 <?php i8_limit_text(get_the_title(), 250, '...'); ?>
             </a>
         </h4>
-        <p class="text-justify f15">
+        <p class="text-justify excerpt f15 fw-3">
             <?php i8_limit_text(get_the_excerpt(), 240, '...'); ?>
         </p>
     </div>

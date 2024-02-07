@@ -60,7 +60,6 @@
 <script type="text/javascript" defer>
   // darkmode
   const darkModeSwitch = document.querySelector(".dark-mode-switch");
-  const darkModeSwitch1 = document.querySelector(".dark-mode-switch1");
 
   // بررسی وضعیت دارک مود از LocalStorage
   const isDarkMode = localStorage.getItem("darkMode") === "true";
@@ -68,7 +67,6 @@
   // تنظیم وضعیت اولیه بر اساس وضعیت ذخیره شده
   document.body.classList.toggle("dark-mode", isDarkMode);
   darkModeSwitch.classList.toggle("active", isDarkMode);
-  darkModeSwitch1.classList.toggle("active", isDarkMode);
 
   darkModeSwitch.addEventListener("click", () => {
     const isActive = darkModeSwitch.classList.toggle("active");
@@ -77,13 +75,7 @@
     // ذخیره وضعیت دارک مود در LocalStorage
     localStorage.setItem("darkMode", isActive);
   });
-  darkModeSwitch1.addEventListener("click", () => {
-    const isActive = darkModeSwitch1.classList.toggle("active");
-    document.body.classList.toggle("dark-mode", isActive);
 
-    // ذخیره وضعیت دارک مود در LocalStorage
-    localStorage.setItem("darkMode", isActive);
-  });
 </script>
 <?php if (is_singular()): ?>
   <!-- shared button -->

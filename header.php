@@ -119,7 +119,7 @@
     }
 
     .header-box {
-        background: linear-gradient(180deg, #0029C0 0%, #0029C0 50%, #FFF 50%, #FFF 80.71%);
+        background: linear-gradient(180deg, var(--i8-light-primary) 0%, var(--i8-light-primary) 50%, var(--i8-light-bg-color) 50%, var(--i8-light-bg-color) 80.71%);
         height: 116px
     }
 
@@ -149,9 +149,6 @@
 </style>
 
 
-
-
-
 <body dir="rtl" class="bg-main">
 
     <!-- header -->
@@ -159,7 +156,7 @@
         <div id="header-container" class=" header-container">
 
             <div class="topbar container d-none d-xl-flex d-lg-flex d-md-flex justify-content-between bg-dark-primary">
-                <div class="datecontainer d-flex f12 fw-2 justify-content-end text-black"
+                <div class="datecontainer d-flex f12 fw-2 justify-content-end text-black text-gray"
                     style="border-right:2px solid var(--i8-dark-complete-color);padding-right:5px;">
                     <?php $date = new jDateTime(true, true, 'Asia/Tehran');
                     echo $date->date(" l j F Y "); ?>
@@ -225,7 +222,7 @@
                             ?>
                             <div class="newsticker-container justify-content-end">
                                 <div class="d-flex d-xl-none d-lg-none d-md-none">
-                                    <div class="datecontainer d-flex f12 fw-2 justify-content-end text-black"
+                                    <div class="datecontainer d-flex f12 fw-2 justify-content-end text-black text-gray"
                                         style="border-left:2px solid var(--i8-dark-complete-color);padding-left:5px;">
                                         <?php $date = new jDateTime(true, true, 'Asia/Tehran');
                                         echo $date->date(" l j F Y "); ?>

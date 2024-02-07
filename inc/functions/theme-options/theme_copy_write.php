@@ -19,13 +19,13 @@ function i8_customize_register_copy_write($wp_customize)
     /**
      * Add Setting
      */
-    $wp_customize->add_setting('i8_light_primary_color',  array('default' => '#087DAF', 'transport' => 'refresh'));
-    $wp_customize->add_setting('i8_dark_primary_color', array('default' => '#087DAF', 'transport' => 'refresh'));
+    $wp_customize->add_setting('i8_light_primary_color',  array('default' => '#0029C0', 'transport' => 'refresh'));
+    $wp_customize->add_setting('i8_dark_primary_color', array('default' => '#001E8A', 'transport' => 'refresh'));
     $wp_customize->add_setting('i8_light_secondary_color', array('default' => '#4A4A4A', 'transport' => 'refresh'));
     $wp_customize->add_setting('i8_dark_secondary_color', array('default' => '#f8f8f8', 'transport' => 'refresh'));
-    $wp_customize->add_setting('i8_light_complete_color',  array('default' => '#f67902', 'transport' => 'refresh'));
-    $wp_customize->add_setting('i8_dark_complete_color', array('default' => '#f67902', 'transport' => 'refresh'));
-    $wp_customize->add_setting('i8_light_bg_color', array('default' => '#f8f8f8', 'transport' => 'refresh'));
+    $wp_customize->add_setting('i8_light_complete_color',  array('default' => '#FFB400', 'transport' => 'refresh'));
+    $wp_customize->add_setting('i8_dark_complete_color', array('default' => '#FFB400', 'transport' => 'refresh'));
+    $wp_customize->add_setting('i8_light_bg_color', array('default' => '#ffffff', 'transport' => 'refresh'));
     $wp_customize->add_setting('i8_dark_bg_color', array('default' => '#171c28', 'transport' => 'refresh'));
     $wp_customize->add_setting('i8_light_fg_color', array('default' => '#ffffff', 'transport' => 'refresh'));
     $wp_customize->add_setting('i8_dark_fg_color', array('default' => '#222740', 'transport' => 'refresh'));
