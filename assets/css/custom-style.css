@@ -1525,6 +1525,9 @@ body.dark-mode {
   background: linear-gradient(180deg, var(--i8-dark-primary) 0%, var(--i8-dark-primary) 50%, var(--i8-dark-bg-color) 50%, var(--i8-dark-bg-color) 80.71%);
   height: 116px;
 }
+.dark-mode .list-title-none a::before {
+  background: var(--i8-dark-bg-color);
+}
 
 .dark-mode .single-big-post-meta-container {
   background-color: var(--i8-dark-bg-color);
@@ -1743,7 +1746,7 @@ body.bg-main.dark-mode a:hover,
   right: -7px;
   content: "";
   border: 2px solid var(--i8-light-complete-color);
-  background: white;
+  background: var(--i8-light-bg-color);
   margin-left: 3px;
 
 }
