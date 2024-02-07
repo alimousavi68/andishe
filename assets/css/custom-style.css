@@ -1522,7 +1522,7 @@ body.dark-mode {
 }
 
 .dark-mode .header-box {
-  background: linear-gradient(180deg, var(--i8-dark-primary) 0%, var(--i8-dark-primary) 50%, var(--i8-dark-bg-color) 50%, var(--i8-dark-bg-color) 80.71%);
+  background: linear-gradient(180deg, var(--i8-dark-primary) 0%, var(--i8-dark-primary) 50%, var(--i8-dark-fg-color) 50%, var(--i8-dark-fg-color) 80.71%);
   height: 116px;
 }
 .dark-mode .list-title-none a::before {
@@ -1538,7 +1538,7 @@ body.dark-mode {
 }
 
 .dark-mode .top-section {
-  background-color: var(--i8-dark-bg-color);
+  background-color: var(--i8-dark-fg-color);
 }
 
 .dark-mode a {
