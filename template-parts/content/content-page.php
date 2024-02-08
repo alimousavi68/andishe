@@ -62,7 +62,7 @@ $tag_icon = customizeSVG($tag_icon, 'var(--i8-dark-primary)', 'var(--i8-dark-pri
             <p class="display-6 fw-1 text-center text-xl-end text-lg-end text-md-end text-sm-center mb-0">
                 <?php echo $sub_title; ?>
             </p>
-            <h1 class="single-title fw-7 h-fs-8 text-center text-xl-end text-lg-end text-md-end text-sm-center">
+            <h1 class="single-title fw-4 h-fs-8 text-center text-xl-end text-lg-end text-md-end text-sm-center">
                 <?php the_title(); ?>
             </h1>
 

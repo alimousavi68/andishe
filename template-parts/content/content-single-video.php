@@ -115,7 +115,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
             <p class="display-6 fw-1 text-justify text-xl-end text-lg-end text-md-end text-sm-justify mb-0">
                 <?php echo $sub_title; ?>
             </p>
-            <h1 class="single-title fw-7 h-fs-8 text-justify text-xl-end text-lg-end text-md-end text-sm-justify">
+            <h1 class="single-title fw-4 h-fs-8 text-justify text-xl-end text-lg-end text-md-end text-sm-justify">
                 <?php the_title(); ?>
             </h1>
             <p class="f15 text-gray text-justify">
