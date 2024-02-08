@@ -21,11 +21,11 @@ $display-font-sizes: (
   6: 0.8125rem                
 );    
 // $display-font-weight: 300;
-         
+          
 $font-size-base: 0.818rem;                 
 $lead-font-size: $font-size-base * 1;         
-$lead-font-weight: 300;                     
-$display-line-height: 1.5;      
+$lead-font-weight: 300;                      
+$display-line-height: 1.5;         
 
 @import '../../node_modules/bootstrap/scss/bootstrap-reboot.scss'; 
 @import '../../node_modules/bootstrap/scss/bootstrap-utilities.scss';
@@ -35,7 +35,7 @@ $display-line-height: 1.5;
 @import '../css/news-ticker.css';      
 @import '../css/jquerysctipttop.css';         
               
-           
+              
 /*  add Custom style for bootstrap borders */
 @media screen and (max-width: 820px) { 
   .multi-item-thumb {

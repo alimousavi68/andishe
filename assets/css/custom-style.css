@@ -341,7 +341,7 @@ body * {
     font-family: YBakhVF;
     outline: none;
     list-style: none;
-    font-variation-settings: "wght" 400, "DOTS" 1;
+    font-variation-settings:  "DOTS" 1;
   }
 }
 
@@ -1255,10 +1255,11 @@ img.hover:hover {
 
 /* single page  */
 .content-entry p {
-  font-size: 18px !important;
-  line-height: 185%;
+  font-size: 20px !important;
+  line-height: 200%;
   margin-bottom: 8px;
-
+  font-weight: 300;
+  /* color: #212529; */
 }
 
 .share-icon {
