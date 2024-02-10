@@ -99,7 +99,7 @@
 
 <style>
     .topbar {
-        height: 26px;
+        /* height: 26px; */
         padding: 5px 0;
     }
 
@@ -170,21 +170,21 @@
                 <div class="d-flex container row  gap-0 justify-content-between">
                     <div class="logo-container col">
                         <a href="<?php echo bloginfo('url') ?>" title="<?php bloginfo('title'); ?> " class="logo">
-                            <img width="160" height="94" class="header-logo"
+                            <img width="160" height="94" class="header-logo px-2 px-xl-0 px-lg-2 px-md-2 px-sm-2"
                                 src="<?php echo get_stylesheet_directory_uri(); ?>/images/global/gozaresh_logo.png"
                                 alt="logo" />
                         </a>
                     </div>
                     <div class="left-box col d-flex flex-column p-0">
 
-                        <div class="row p-0 flex-fill">
-                            <div class="d-none d-xl-flex d-lg-flex d-md-flex flex-row col-21 menu-container">
+                        <div class="row p-0 flex-fill justify-content-end">
+                            <div class="d-none d-xl-flex d-lg-none d-md-none flex-row col-21 menu-container">
                                 <?php build_custom_menu_by_location('primary'); ?>
                             </div>
 
                             <!-- Tools Btn -->
                             <div
-                                class="d-flex col-24 col-xl-3 col-lg-3 col-md-3 px-0 justify-content-end align-items-center gap-2 gap-lg-2 gap-sm-2">
+                                class="d-flex col-24 col-xl-3 col-lg-3 col-md-4 px-0 justify-content-end align-items-center gap-2 gap-lg-2 gap-sm-2">
                                 <a href="#"
                                     class="dark-mode-switch  px-1 px-lg-0 px-sm-1 round-icon d-flex justify-content-center align-items-center"
                                     alt="dark mode button" aria-label="dark mode button">

@@ -131,7 +131,7 @@ function i8_add_custom_sidebar()
             'id' => 'hmel-sidebar',
             'class' => 'hmel-sidebar',
             'description' => 'این ستون در صفحه اصلی و در سمت چپ زیر ویژه قرار میگیرد.',
-            'before_widget' => '<div class="row widget box p-2 ">',
+            'before_widget' => '<div class="col-xl-24 col-lg-24  col-sm-24 col-md-12 widget box p-2 mb-0 py-0">',
             'after_widget' => '</div>',
             'before_title' => '',
             'after_title' => '',

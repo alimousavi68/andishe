@@ -4,7 +4,7 @@ $posttags = get_the_tags();
 $tag_icon = '';
 $tag_icon = customizeSVG($tag_icon, 'var(--i8-dark-primary)', 'var(--i8-dark-primary)');
 ?>
-<div class="col-md-17 col-sm-24 col-xl-18 d-flex flex-column gap-2 pe-0 ps-0 ps-xl-3 ps-lg-3 ps-md-2 ps-sm-0">
+<div class="col-md-24 col-sm-24 col-xl-18 d-flex flex-column gap-2 pe-0 ps-0 ps-xl-3 ps-lg-3 ps-md-2 ps-sm-0">
     <!-- breadcrumb -->
     <div
         class=" d-flex align-items-top pb-2 mx-0 align-content-center row-gap-3 i8-breadcrumb box p-2 flex-wrap justify-content-around border-bottom">

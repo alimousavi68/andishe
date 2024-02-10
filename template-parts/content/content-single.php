@@ -14,7 +14,7 @@ $reference_icon = customizeSVG($reference_icon, 'var(--i8-dark-primary)', 'var(-
 $reference_name = (get_post_meta($post->ID, 'hasht-reference-name', true)) ? get_post_meta($post->ID, 'hasht-reference-name', true) : '';
 $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get_post_meta($post->ID, 'hasht-reference-link', true) : '#';
 ?>
-<div class="col-md-17 col-sm-24 col-xl-18 d-flex flex-column gap-2 pe-0 ps-0 ps-xl-3 ps-lg-3 ps-md-2 ps-sm-0">
+<div class="col-md-24 col-sm-24 col-xl-18 d-flex flex-column gap-2 pe-0 ps-0 ps-xl-3 ps-lg-3 ps-md-2 ps-sm-0">
 
     <!-- breadcrumb -->
     <div
@@ -77,7 +77,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
     </div>
 
     <!-- intro -->
-    <div class="article d-flex flex-row justify-content-between box p-4 mt order-1 order-xl-2 order-lg-2 border-bottom">
+    <div class="article d-flex flex-row justify-content-between box p-xl-4 p-lg-4 mt order-1 order-xl-2 order-lg-2 border-bottom">
         <div
             class="row w-100 mx-0 d-flex flex-column-reverse flex-xl-row flex-lg-row flex-md-row flex-sm-row row-gap-3">
             <div
@@ -114,7 +114,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
     ?>
 
     <!-- body -->
-    <section class="d-flex flex-column row-gap-3 box p-4 mt-2 order-3 order-xl-3 order-lg-3 ">
+    <section class="d-flex flex-column row-gap-3 box p-xl-4 p-lg-4 mt-2 order-3 order-xl-3 order-lg-3 ">
 
         <div class="l2 content-entry text-justify border-bottom ">
             <?php the_content(); ?>

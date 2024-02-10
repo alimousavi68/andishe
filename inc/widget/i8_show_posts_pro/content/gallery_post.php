@@ -31,7 +31,7 @@ if ($category_posts->have_posts()) {
         // $primary_cat_color = get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) ? get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) : '#000000';
         // $primary_cat_color_transparent = $primary_cat_color . 'c4';
 ?>
-        <div class="col-xl-12 col-lg-24 col-md-6 col-sm-12 px-xl-1 px-lg-1 px-md-1 px-3" >
+        <div class="col-xl-12 col-lg-24 col-md-24 col-sm-12 px-xl-1 px-lg-1 px-md-1 px-3 px-md-3" >
             <div class="post-flip-box-container image_frame <?php echo $thumb_radius; ?>" >
                 <?php echo i8_the_thumbnail('i8-590-370', 'post-flip-box-image object-fit-cover ' . $thumb_radius , array("width" => 590, "height" => 370)); ?>
 

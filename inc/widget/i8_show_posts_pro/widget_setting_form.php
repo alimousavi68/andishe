@@ -67,7 +67,9 @@
         <select name="<?php echo $this->get_field_name('cat'); ?>" id="<?php echo $this->get_field_id('cat'); ?>" class="widefat">
             <option value="0">انتخاب کنید</option>
             <?php
-            $categories = get_categories();
+            $categories = get_categories(array(
+                'hide_empty'      => false,
+            ));
             foreach ($categories as $category) :
                 echo '<option value="' . $category->term_id . '" ' . selected($cat, $category->term_id, false) . '>' . $category->name . '</option>';
             endforeach;

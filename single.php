@@ -7,7 +7,6 @@ get_header();
 
         <?php
         $post_structure = get_post_meta(get_the_ID(), 'i8_post_structure', true);
-        echo '<script> console.log("' . $is_image_gallery . '") </script>';
 
         $video_url = get_post_meta(get_the_ID(), 'hasht-video-link', true);
         $video_emebed = get_post_meta(get_the_ID(), 'hasht-video-embbed', true);
@@ -29,7 +28,7 @@ get_header();
         ?>
 
         <!-- sidebar  -->
-        <div class="sl-sidebar col-xl-6 col-lg-6 col-md-6 col-sm-24 ps-0 pe-xl-2 pe-0 pe-sm-0 i8-sticky sl-sidebar border-end">
+        <div class="sl-sidebar col-xl-6 col-lg-6 col-md-24 col-sm-24 ps-0 pe-xl-2 pe-0 pe-sm-0 i8-sticky sl-sidebar border-end">
             <?php dynamic_sidebar('sl-sidebar'); ?>
         </div>
 

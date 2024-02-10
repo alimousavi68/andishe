@@ -14,7 +14,7 @@ $reference_icon = customizeSVG($reference_icon, 'var(--i8-dark-primary)', 'var(-
 $reference_name = (get_post_meta($post->ID, 'hasht-reference-name', true)) ? get_post_meta($post->ID, 'hasht-reference-name', true) : '';
 $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get_post_meta($post->ID, 'hasht-reference-link', true) : '#';
 ?>
-<div class="col-md-17 col-sm-24 col-xl-18 d-flex flex-column gap-2 pe-0 ps-0 ps-xl-3 ps-lg-3 ps-md-2 ps-sm-0 ">
+<div class="col-md-24 col-sm-24 col-xl-18 d-flex flex-column gap-2 pe-0 ps-0 ps-xl-3 ps-lg-3 ps-md-2 ps-sm-0 ">
     <?php
     if (is_active_sidebar('st-sidebar')) {
         echo '<div class="st-sidebar row d-flex py-3 mx-0 align-content-center row-gap-3">';
@@ -97,15 +97,15 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
                 <?php the_title(); ?>
             </h1>
             
-            <div class="col">
+            <div class="col-24 col-xl-18 col-sm-18 text-justify align-items-top">
 
 
                 <p class="f15 text-gray text-justify">
-                    <?php the_excerpt(); ?>
+                    <?php echo get_the_excerpt(); ?>
                 </p>
 
             </div>
-            <div class="col-auto">
+            <div class="col-xl-6 col-sm-6 col-24 align-items-top mb-3">
                 <?php
                 $author_name = (get_post_meta($post->ID, 'hasht-author-name', true)) ? get_post_meta($post->ID, 'hasht-author-name', true) : '';
                 if ($author_name): ?>
