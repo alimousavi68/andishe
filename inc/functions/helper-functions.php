@@ -217,6 +217,54 @@ function render_primary_category_meta_box($post)
             value="<?php echo get_post_meta($post->ID, 'hasht-video-link-low', true); ?>">
     </div>
 
+    <?php
+    $post_link1_id = get_post_meta($post->ID, 'hasht-related-link1', true);
+    $post_link1 = ($post_link1_id) ? get_permalink($post_link1_id) : '';
+    $post_link2_id = get_post_meta($post->ID, 'hasht-related-link2', true);
+    $post_link2 = ($post_link2_id) ? get_permalink($post_link2_id) : '';
+    $post_link3_id = get_post_meta($post->ID, 'hasht-related-link3', true);
+    $post_link3 = ($post_link3_id) ? get_permalink($post_link3_id) : '';
+
+
+    ?>
+    <!-- لینک پست مرتبط ۱ -->
+    <div id="hasht-related-link1-sec" class="misc-pub-section " <?php echo ($selected_post_structure != 'hot') ? ' style="display:none;" ' : ''; ?>>
+        <label for="hasht-related-link1">لینک پست مرتبط اول</label>
+        <input type="text" name="hasht-related-link1" id="hasht-related-link1" class="widefat"
+            value="<?php echo $post_link1; ?>">
+        <?php if ($post_link1_id): ?>
+            <a href="<?php echo $post_link1; ?>" target="_blank">
+                <?php echo get_the_title($post_link1_id); ?>
+            </a>
+        <?php endif; ?>
+    </div>
+
+    <!-- لینک پست مرتبط ۲ -->
+    <div id="hasht-related-link2-sec" class="misc-pub-section " <?php echo ($selected_post_structure != 'hot') ? ' style="display:none;" ' : ''; ?>>
+        <label for="hasht-related-link2">لینک پست مرتبط دوم</label>
+        <input type="text" name="hasht-related-link2" id="hasht-related-link2" class="widefat"
+            value="<?php echo $post_link2; ?>">
+        <?php if ($post_link2_id): ?>
+            <a href="<?php echo $post_link2; ?>" target="_blank">
+                <?php echo get_the_title($post_link2_id); ?>
+            </a>
+        <?php endif; ?>
+
+    </div>
+
+    <!-- لینک پست مرتبط ۳ -->
+    <div id="hasht-related-link3-sec" class="misc-pub-section " <?php echo ($selected_post_structure != 'hot') ? ' style="display:none;" ' : ''; ?>>
+        <label for="hasht-related-link3">لینک پست مرتبط سوم</label>
+        <input type="text" name="hasht-related-link3" id="hasht-related-link3" class="widefat"
+            value="<?php echo $post_link3; ?>">
+        <?php if ($post_link3_id): ?>
+            <a href="<?php echo $post_link3; ?>" target="_blank">
+                <?php echo get_the_title($post_link3_id); ?>
+            </a>
+        <?php endif; ?>
+
+    </div>
+
 
     <!-- نمایش تاریخ  -->
     <?php
@@ -232,16 +280,27 @@ function render_primary_category_meta_box($post)
             // هنگام تغییر در selectbox
             $("#i8_post_structure").change(function () {
                 var selectedValue = $(this).val();
-
                 // اگر گزینه مشخص شده "option2" باشد
                 if (selectedValue === "video") {
                     // نمایش input باکس
                     $("#hasht-video-link-sec").show();
                     $("#hasht-video-embbed-sec").show();
+                    $("#hasht-related-link1-sec").hide();
+                    $("#hasht-related-link2-sec").hide();
+                    $("#hasht-related-link3-sec").hide();
+                } else if (selectedValue === "hot") {
+                    $("#hasht-related-link1-sec").show();
+                    $("#hasht-related-link2-sec").show();
+                    $("#hasht-related-link3-sec").show();
+                    $("#hasht-video-link-sec").hide();
+                    $("#hasht-video-embbed-sec").hide();
                 } else {
                     // پنهان کردن input باکس
                     $("#hasht-video-link-sec").hide();
                     $("#hasht-video-embbed-sec").hide();
+                    $("#hasht-related-link1-sec").hide();
+                    $("#hasht-related-link2-sec").hide();
+                    $("#hasht-related-link3-sec").hide();
                 }
 
             });
@@ -304,6 +363,21 @@ function save_primary_category_meta_data($post_id)
         update_post_meta($post_id, 'hasht-video-link-low', sanitize_text_field($_POST['hasht-video-link-low']));
     }
 
+    if (isset($_POST['hasht-related-link1'])) {
+        $post1_id = url_to_postid($_POST['hasht-related-link1']);
+        update_post_meta($post_id, 'hasht-related-link1', $post1_id);
+
+    }
+
+    if (isset($_POST['hasht-related-link2'])) {
+        $post2_id = url_to_postid($_POST['hasht-related-link2']);
+        update_post_meta($post_id, 'hasht-related-link2', $post2_id);
+    }
+
+    if (isset($_POST['hasht-related-link3'])) {
+        $post3_id = url_to_postid($_POST['hasht-related-link3']);
+        update_post_meta($post_id, 'hasht-related-link3', $post3_id);
+    }
 
 
     // print and show $_POST value in consle
@@ -584,7 +658,7 @@ function i8_mobile_menu($location, $custom_class = ' ', $icon_size = array('32',
     echo '<nav class="i8-h-menu ' . $custom_class . ' ">
             <input type="checkbox" id="menu" name="menu" class="m-menu__checkbox">
             <label class="m-menu__toggle" for="menu">
-            <?xml version="1.0" encoding="UTF-8"?><svg width="'.$icon_size[0].'px" height="'.$icon_size[1].'px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="var(--i8-light-secondary)"><path d="M8 6h12M4 6.01l.01-.011M4 12.01l.01-.011M4 18.01l.01-.011M8 12h12M8 18h12" stroke="var(--i8-light-secondary )" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <?xml version="1.0" encoding="UTF-8"?><svg width="' . $icon_size[0] . 'px" height="' . $icon_size[1] . 'px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="var(--i8-light-secondary)"><path d="M8 6h12M4 6.01l.01-.011M4 12.01l.01-.011M4 18.01l.01-.011M8 12h12M8 18h12" stroke="var(--i8-light-secondary )" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
             </label>
              <div class="m-menu">
                 <div class="m-menu__header">
@@ -768,9 +842,9 @@ function i8_show_social_icons($width = 16, $height = 16)
                 <a class="p-0 p-lg-0 p-sm-1 dark-btn" target="_blank" href="<?php echo $aparat; ?>" alt="aparat share button"
                     aria-label="aparat share button">
                     <svg fill="var(--i8-light-secondary)" width="<?php echo $width; ?>" height="<?php echo $height; ?>"
-                        class="bi svg-icon bi-twitter mx-1" viewBox="0 0 24.00 24.00" role="img" xmlns="http://www.w3.org/2000/svg"
-                        transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)" stroke="var(--i8-light-secondary)"
-                        stroke-width="0.00024000000000000003">
+                        class="bi svg-icon bi-twitter mx-1" viewBox="0 0 24.00 24.00" role="img"
+                        xmlns="http://www.w3.org/2000/svg" transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)"
+                        stroke="var(--i8-light-secondary)" stroke-width="0.00024000000000000003">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
                             stroke="var(--i8-light-secondary)" stroke-width="0.192"></g>
@@ -858,7 +932,9 @@ function custom_gallery_format($output, $attr)
             'columns' => 3,
             'size' => 'thumbnail',
             'link' => 'file'
-        ), $attr);
+        ),
+        $attr
+    );
 
     // Get the image IDs from the gallery shortcode
     $image_ids = explode(',', $gallery_atts['ids']);
@@ -1058,8 +1134,8 @@ function custom_lightbox_gallery()
 
                     function createCaption(caption) {
                         return `<div class="carousel-caption d-none d-md-block">
-                                                                                                                                                <h4 class="m-0">${caption}</h4>
-                                                                                                                                              </div>`;
+                                                                                                                                                                                                                        <h4 class="m-0">${caption}</h4>
+                                                                                                                                                                                                                      </div>`;
                     }
 
                     function createIndicators(img) {
@@ -1073,11 +1149,11 @@ function custom_lightbox_gallery()
 
                         for (i = 0, len = countSlides; i < len; i++) {
                             markup += `
-                                                                                                                                                <button type="button" data-bs-target="#lightboxCarousel"
-                                                                                                                                                  data-bs-slide-to="${i}"
-                                                                                                                                                  ${i === curIndex ? 'class="active" aria-current="true"' : ""}
-                                                                                                                                                  aria-label="Slide ${i + 1}">
-                                                                                                                                                </button>`;
+                                                                                                                                                                                                                        <button type="button" data-bs-target="#lightboxCarousel"
+                                                                                                                                                                                                                          data-bs-slide-to="${i}"
+                                                                                                                                                                                                                          ${i === curIndex ? 'class="active" aria-current="true"' : ""}
+                                                                                                                                                                                                                          aria-label="Slide ${i + 1}">
+                                                                                                                                                                                                                        </button>`;
                         }
 
                         return markup;
@@ -1092,10 +1168,10 @@ function custom_lightbox_gallery()
                             const imgAlt = img.getAttribute("alt");
 
                             markup += `
-                                                                                                                                                <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
-                                                                                                                                                  <img class="d-block img-fluid w-100" src=${imgSrc} alt="${imgAlt}">
-                                                                                                                                                  ${imgAlt ? createCaption(imgAlt) : ""}
-                                                                                                                                                </div>`;
+                                                                                                                                                                                                                        <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
+                                                                                                                                                                                                                          <img class="d-block img-fluid w-100" src=${imgSrc} alt="${imgAlt}">
+                                                                                                                                                                                                                          ${imgAlt ? createCaption(imgAlt) : ""}
+                                                                                                                                                                                                                        </div>`;
                         }
 
                         return markup;
@@ -1103,27 +1179,27 @@ function custom_lightbox_gallery()
 
                     function createCarousel(img) {
                         const markup = `
-                                                                                                                                              <!-- Lightbox Carousel -->
-                                                                                                                                              <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="true">
-                                                                                                                                                <!-- Indicators/dots -->
-                                                                                                                                                <div class="carousel-indicators">
-                                                                                                                                                  ${createIndicators(img)}
-                                                                                                                                                </div>
-                                                                                                                                                <!-- Wrapper for Slides -->
-                                                                                                                                                <div class="carousel-inner justify-content-center mx-auto">
-                                                                                                                                                  ${createSlides(img)}
-                                                                                                                                                </div>
-                                                                                                                                                <!-- Controls/icons -->
-                                                                                                                                                <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
-                                                                                                                                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                                                                                                                  <span class="visually-hidden">Previous</span>
-                                                                                                                                                </button>
-                                                                                                                                                <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next">
-                                                                                                                                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                                                                                                                  <span class="visually-hidden">Next</span>
-                                                                                                                                                </button>
-                                                                                                                                              </div>
-                                                                                                                                              `;
+                                                                                                                                                                                                                      <!-- Lightbox Carousel -->
+                                                                                                                                                                                                                      <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="true">
+                                                                                                                                                                                                                        <!-- Indicators/dots -->
+                                                                                                                                                                                                                        <div class="carousel-indicators">
+                                                                                                                                                                                                                          ${createIndicators(img)}
+                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                        <!-- Wrapper for Slides -->
+                                                                                                                                                                                                                        <div class="carousel-inner justify-content-center mx-auto">
+                                                                                                                                                                                                                          ${createSlides(img)}
+                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                        <!-- Controls/icons -->
+                                                                                                                                                                                                                        <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
+                                                                                                                                                                                                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                                                                                                                                                                                          <span class="visually-hidden">Previous</span>
+                                                                                                                                                                                                                        </button>
+                                                                                                                                                                                                                        <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next">
+                                                                                                                                                                                                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                                                                                                                                                                                          <span class="visually-hidden">Next</span>
+                                                                                                                                                                                                                        </button>
+                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                      `;
 
                         modalBody.innerHTML = markup;
                     }
@@ -1196,9 +1272,10 @@ add_action('wp_footer', 'custom_lightbox_gallery', 10, 1);
 // End Image gallery
 
 // Check if there are multiple widgets in sidebar
-function has_multiple_widgets_in_sidebar( $sidebar_id ) {
+function has_multiple_widgets_in_sidebar($sidebar_id)
+{
     $widgets = wp_get_sidebars_widgets();
-    if ( isset( $widgets[ $sidebar_id ] ) && count( $widgets[ $sidebar_id ] ) > 1 ) {
+    if (isset($widgets[$sidebar_id]) && count($widgets[$sidebar_id]) > 1) {
         return true;
     }
     return false;
