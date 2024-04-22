@@ -22,12 +22,6 @@ class i8_show_posts_pro extends WP_Widget
         'نمایش به صورت گالری ۲' => 'mod12',
         'نمایش به صورت تایم لاین' => 'mod13',
         'نمایش به صورت عکس و متن زیر هم ' => 'mod14',
-        'نمایش لیست پست ها با عکس نویسنده' => 'mod15',
-        'نمایش لیست پست ها+ اولی عکس بزرگ بقیه کوچک' => 'mod16',
-        'ویدیو پلیر تکی' => 'mod17',
-        'لیست پخش صوتی' => 'mod18',
-        'نمایش به صورت افقی استایل دوم' => 'mod19',
-        'نمایش پست های ویژه افکت دو تصویر بزرگ و لیست' => 'mod20',
 
 
     );
@@ -42,7 +36,6 @@ class i8_show_posts_pro extends WP_Widget
         'hide_title' => false,
         'hide_thumb' => false,
         'hide_excerpt' => true,
-        'hide_category' => false,
         'icon' => '',
         'icon_list_bullet' => '',
         'icon_img' => '',
@@ -90,7 +83,6 @@ class i8_show_posts_pro extends WP_Widget
         $hide_title = esc_attr($instance['hide_title']);
         $hide_thumb = esc_attr($instance['hide_thumb']);
         $hide_excerpt = esc_attr($instance['hide_excerpt']);
-        $hide_category = esc_attr($instance['hide_category']);
         $icon = $instance['icon'];
         $icon_list_bullet = $instance['icon_list_bullet'];
         $icon_img = esc_attr($instance['icon_img']);
@@ -113,7 +105,7 @@ class i8_show_posts_pro extends WP_Widget
         $display_column_num_mini_desktop = esc_attr($instance['display_column_num_mini_desktop']);
         $display_column_num_tablet = esc_attr($instance['display_column_num_tablet']);
         $display_column_num_mobile = esc_attr($instance['display_column_num_mobile']);
-        include ('widget_setting_form.php');
+        include('widget_setting_form.php');
     }
 
 
@@ -146,7 +138,6 @@ class i8_show_posts_pro extends WP_Widget
         $instance['hide_title'] = sanitize_text_field($new_instance['hide_title']);
         $instance['hide_thumb'] = sanitize_text_field($new_instance['hide_thumb']);
         $instance['hide_excerpt'] = sanitize_text_field($new_instance['hide_excerpt']);
-        $instance['hide_category'] = sanitize_text_field($new_instance['hide_category']);
         $instance['orderby'] = sanitize_text_field($new_instance['orderby']);
         $instance['display_style'] = sanitize_text_field($new_instance['display_style']);
         $instance['show_desktop'] = ($new_instance['show_desktop']);
@@ -165,11 +156,10 @@ class i8_show_posts_pro extends WP_Widget
         $hide_title = $instance['hide_title'];
         $hide_thumb = $instance['hide_thumb'];
         $hide_excerpt = $instance['hide_excerpt'];
-        $hide_category = $instance['hide_category'];
-
+        $title = apply_filters('wp_widget_title', $instance['title']);
         $sub_title = $instance['sub_title'];
         $sub_title_print = (!empty($sub_title)) ? $sub_title : '';
-        $cat = $instance['cat'];        
+        $cat = $instance['cat'];
         $num = $instance['num'];
         $thumb_width = $instance['thumb_width'];
         $thumb_height = $instance['thumb_height'];
@@ -190,20 +180,15 @@ class i8_show_posts_pro extends WP_Widget
         $display_column_num_mobile = $instance['display_column_num_mobile'];
 
         //with cat color 
-        $cat_color = get_term_meta($cat, 'i8_CustomTerm_color', true);
-        $cat_color = isset($cat_color) ? get_term_meta($cat, 'i8_CustomTerm_color', true) : 'var(--i8-light-complete-color)';
-
-
+        // $cat_color = get_term_meta($cat, 'i8_CustomTerm_color', true) ? get_term_meta($cat, 'i8_CustomTerm_color', true) : 'var(--i8-light-complete-color)';
+        
         // with out cat color 
-        // $cat_color = 'var(--i8-light-complete-color)';
+        $cat_color = 'var(--i8-light-complete-color)';
         $cat_icon = get_term_meta($cat, 'i8_CustomTerm_icon', true) ? get_term_meta($cat, 'i8_CustomTerm_icon', true) : '';
-
-        $primary_cat_url = get_category_link(intval($cat));
-        $title = '<a href="' . $primary_cat_url . '" style="color:' . $cat_color . '" > ' . apply_filters('wp_widget_title', $instance['title']) . '</a>';
 
         $anime_class = ($icon_animate) ? 'icon_animate' : '';
         $icon_print = '';
-        $icon_print = ($cat_icon) ? customizeSVG($cat_icon, $cat_color, $cat_color, 30, 30, $anime_class) : $icon_print;
+        $icon_print = ($cat_icon) ? customizeSVG($cat_icon, $cat_color, $cat_color , 30, 30, $anime_class) : $icon_print;
         $icon_print = ($icon) ? customizeSVG($icon, $cat_color, $cat_color, 30, 30, $anime_class) : $icon_print;
         $icon_print = (empty($icon) && !empty($icon_img)) ? '<img src="' . $icon_img . '" class="' . $anime_class . '"  />' : $icon_print;
 
@@ -218,129 +203,90 @@ class i8_show_posts_pro extends WP_Widget
         $show_desktop = $instance['show_desktop'];
 
         $values = array_values($this->display_style);
-        ?>
-
-        <?php
 
         if ($display_style == $values[0]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/simple_post_list_one_col.php');
+                require('content/simple_post_list_one_col.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/simple_post_list_one_col.php');
+                require('content/simple_post_list_one_col.php');
             }
         } elseif ($display_style == $values[1]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/special_post_list.php');
+                require('content/special_post_list.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/special_post_list.php');
+                require('content/special_post_list.php');
             }
         } elseif ($display_style == $values[2]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/simple_post_list_vertical.php');
+                require('content/simple_post_list_vertical.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/simple_post_list_vertical.php');
+                require('content/simple_post_list_vertical.php');
             }
         } elseif ($display_style == $values[3]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/special_post_flip_box.php');
+                require('content/special_post_flip_box.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/special_post_flip_box.php');
+                require('content/special_post_flip_box.php');
             }
         } elseif ($display_style == $values[4]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/special_post_list_2.php');
+                require('content/special_post_list_2.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/special_post_list_2.php');
+                require('content/special_post_list_2.php');
             }
         } elseif ($display_style == $values[5]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/gallery_post.php');
+                require('content/gallery_post.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/gallery_post.php');
+                require('content/gallery_post.php');
             }
         } elseif ($display_style == $values[6]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/numeric_list.php');
+                require('content/numeric_list.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/numeric_list.php');
+                require('content/numeric_list.php');
             }
         } elseif ($display_style == $values[7]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/hero_section1.php');
+                require('content/hero_section1.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/hero_section1.php');
+                require('content/hero_section1.php');
             }
         } elseif ($display_style == $values[8]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/hero_section2.php');
+                require('content/hero_section2.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/hero_section2.php');
+                require('content/hero_section2.php');
             }
         } elseif ($display_style == $values[9]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/special_post_list_3.php');
+                require('content/special_post_list_3.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/special_post_list_3.php');
+                require('content/special_post_list_3.php');
             }
         } elseif ($display_style == $values[10]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/simple_post_list_vertical2.php');
+                require('content/simple_post_list_vertical2.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/simple_post_list_vertical2.php');
+                require('content/simple_post_list_vertical2.php');
             }
         } elseif ($display_style == $values[11]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/gallery_post2.php');
+                require('content/gallery_post2.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/gallery_post2.php');
+                require('content/gallery_post2.php');
             }
         } elseif ($display_style == $values[12]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/simple_post_list_timeline.php');
+                require('content/simple_post_list_timeline.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/simple_post_list_timeline.php');
+                require('content/simple_post_list_timeline.php');
             }
         } elseif ($display_style == $values[13]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/special_post_list_4.php');
+                require('content/special_post_list_4.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/special_post_list_4.php');
-            }
-        } elseif ($display_style == $values[14]) {
-            if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/simple_post_list_author_base.php');
-            } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/simple_post_list_author_base.php');
-            }
-        } elseif ($display_style == $values[15]) {
-            if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/special_post_list_5.php');
-            } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/special_post_list_5.php');
-            }
-        } elseif ($display_style == $values[16]) {
-            if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/simple_video_player.php');
-            } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/simple_video_player.php');
-            }
-        } elseif ($display_style == $values[17]) {
-            if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/simple_audio_player.php');
-            } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/simple_audio_player.php');
-            }
-        } elseif ($display_style == $values[18]) {
-            if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/simple_post_list_vertical-3.php');
-            } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/simple_post_list_vertical-3.php');
-            }
-        } elseif ($display_style == $values[19]) {
-            if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require ('content/special_post_list_6.php');
-            } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require ('content/special_post_list_6.php');
+                require('content/special_post_list_4.php');
             }
         }
     }

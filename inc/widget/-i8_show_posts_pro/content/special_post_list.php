@@ -1,7 +1,7 @@
 <?php
 echo $args['before_widget'];
 
-echo '<div class="text-title box-title  ' . $head_font_size . ' fw-7 me-lg-2 me-md-2">';
+echo '<div class="text-title box-title  ' . $head_font_size . ' fw-7 m-0 me-lg-2 me-md-2">';
 if ($hide_title != 'on') {
   // echo $args['before_title'] . $title . $args['after_title'];
   echo $args['before_title'] . $icon_print . $title . $args['after_title'];
@@ -31,7 +31,7 @@ if ($category_posts->have_posts()) {
           <?php echo i8_the_thumbnail('i8-xl-430-242', 'single-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => $thumb_width, 'height' => $thumb_height), true, '', false, true); ?>
         </a>
         <h2 class="post-title display-3 fw-7 l1">
-          <a href="<?php echo get_the_permalink(); ?>" class="">
+          <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
             <?php i8_limit_text(get_the_title(), 120, '...'); ?>
           </a>
         </h2>
@@ -55,7 +55,7 @@ if ($category_posts->have_posts()) {
           </div>
           <div class="d-flex flex-column ">
             <h3 class="me-2 l22-05 post-title">
-              <a class=" <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l1"
+              <a class="i8-blink <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l1"
                 href="<?php echo get_the_permalink(); ?>">
                 <?php i8_limit_text(get_the_title(), 72, '...'); ?>
               </a>

@@ -32,10 +32,6 @@
         <label for="<?php echo $this->get_field_id('hide_excerpt'); ?>">مخفی سازی خلاصه مطلب</label>
     </p>
     <p>
-        <input type="checkbox" name="<?php echo $this->get_field_name('hide_category'); ?>" id="<?php echo $this->get_field_id('hide_category'); ?>" class="checkbox" <?php echo ($hide_category == 'on') ? 'checked="checked"' : ''; ?>>
-        <label for="<?php echo $this->get_field_id('hide_category'); ?>"> نمایش  برچسب دسته بندی</label>
-    </p>
-    <p>
         <label for="<?php echo $this->get_field_id('icon_list_bullet'); ?>">آیکن کنار تیتر ( کد svg)</label>
         <textarea type="text" name="<?php echo $this->get_field_name('icon_list_bullet'); ?>" id="<?php echo $this->get_field_id('icon_list_bullet'); ?>" style="text-align:left;direction:ltr;" class="widefat" cols="30" rows="4"><?php echo $icon_list_bullet; ?></textarea>
     </p>
@@ -67,9 +63,7 @@
         <select name="<?php echo $this->get_field_name('cat'); ?>" id="<?php echo $this->get_field_id('cat'); ?>" class="widefat">
             <option value="0">انتخاب کنید</option>
             <?php
-            $categories = get_categories(array(
-                'hide_empty'      => false,
-            ));
+            $categories = get_categories();
             foreach ($categories as $category) :
                 echo '<option value="' . $category->term_id . '" ' . selected($cat, $category->term_id, false) . '>' . $category->name . '</option>';
             endforeach;
@@ -151,11 +145,11 @@
     <div style="display: flex;flex-direction: row;gap: 9px;">
         <p style="width:50%;">
             <label for="<?php echo $this->get_field_id('thumb_width'); ?>">طول تصویر</label>
-            <input type="number" min="30" name="<?php echo $this->get_field_name('thumb_width'); ?>" id="<?php echo $this->get_field_id('thumb_width'); ?>" value="<?php echo (!empty($thumb_width)) ? $thumb_width : ""; ?>" class="widefat">
+            <input type="number" min="30" name="<?php echo $this->get_field_name('thumb_width'); ?>" id="<?php echo $this->get_field_id('thumb_width'); ?>" value="<?php echo (!empty($thumb_width)) ? $thumb_width : 75; ?>" class="widefat">
         </p>
         <p style="width:50%;">
             <label for="<?php echo $this->get_field_id('thumb_height'); ?>">عرض تصویر</label>
-            <input type="number" min="30" name="<?php echo $this->get_field_name('thumb_height'); ?>" id="<?php echo $this->get_field_id('thumb_height'); ?>" value="<?php echo (!empty($thumb_height)) ? $thumb_height : ""; ?>" class="widefat">
+            <input type="number" min="30" name="<?php echo $this->get_field_name('thumb_height'); ?>" id="<?php echo $this->get_field_id('thumb_height'); ?>" value="<?php echo (!empty($thumb_height)) ? $thumb_height : 75; ?>" class="widefat">
         </p>
     </div>
 
