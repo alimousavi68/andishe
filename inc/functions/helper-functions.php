@@ -91,10 +91,10 @@ function i8_limit_text($text, $limit_count, $ending_text)
  */
 function add_custom_subtitle_field()
 {
-    add_action('edit_form_after_title', 'custom_subtitle_field');
+    //add_action('edit_form_after_title', 'custom_subtitle_field');
 }
 
-add_action('add_meta_boxes', 'add_custom_subtitle_field');
+//add_action('add_meta_boxes', 'add_custom_subtitle_field');
 
 function custom_subtitle_field()
 {
@@ -110,7 +110,7 @@ function save_post_subtitle($post_id)
     }
 }
 
-add_action('save_post', 'save_post_subtitle');
+//add_action('save_post', 'save_post_subtitle');
 
 
 
@@ -123,7 +123,7 @@ add_action('save_post', 'save_post_subtitle');
  */
 
 // اضافه کردن یک متا باکس جدید به صفحه ایجاد و ویرایش پست ها
-add_action('add_meta_boxes', 'add_primary_category_meta_box');
+//add_action('add_meta_boxes', 'add_primary_category_meta_box');
 function add_primary_category_meta_box()
 {
     add_meta_box('primary_category_meta_box', 'داشبورد ویژه', 'render_primary_category_meta_box', 'post', 'side', 'high');
@@ -259,7 +259,7 @@ function render_primary_category_meta_box($post)
  * Save Meta box Values in Datatbase
  * 
  */
-add_action('save_post', 'save_primary_category_meta_data');
+//add_action('save_post', 'save_primary_category_meta_data');
 function save_primary_category_meta_data($post_id)
 {
     if (isset($_POST['hasht_primary_category'])) {
@@ -842,7 +842,7 @@ function i8_show_social_icons($width = 16, $height = 16)
  * 
  */
 
-add_filter('post_gallery', 'custom_gallery_format', 10, 2);
+// add_filter('post_gallery', 'custom_gallery_format', 10, 2);
 function custom_gallery_format($output, $attr)
 {
     // Parse the gallery shortcode attributes
@@ -1184,7 +1184,7 @@ function custom_lightbox_gallery()
         }
     endif;
 }
-add_action('wp_footer', 'custom_lightbox_gallery', 10, 1);
+//add_action('wp_footer', 'custom_lightbox_gallery', 10, 1);
 
 
 // End Image gallery
