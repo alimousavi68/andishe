@@ -10,4 +10,4 @@ function custom_logo_callback() {
     echo '<input type="file" name="custom_logo" id="custom_logo" value="' . $custom_logo . '" />';
 }
 
-// add_action("admin_init", "custom_logo_settings_section");
+add_action("admin_init", "custom_logo_settings_section");

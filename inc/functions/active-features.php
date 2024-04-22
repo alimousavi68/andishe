@@ -122,7 +122,7 @@ function disable_classic_editor_style() {
     wp_dequeue_style('wp-block-library'); // حذف فایل style-rtl.min.css
     wp_dequeue_style( 'classic-theme-styles' );
 }
-// add_action('wp_enqueue_scripts', 'disable_classic_editor_style',100);
+add_action('wp_enqueue_scripts', 'disable_classic_editor_style',100);
 
 // تابع برای تولید meta description
 function custom_meta_description() {
@@ -176,7 +176,7 @@ add_action('wp_head', 'custom_meta_description');
 
 
 //Disable emojis in WordPress
-// add_action( 'init', 'smartwp_disable_emojis' );
+add_action( 'init', 'smartwp_disable_emojis' );
 
 function smartwp_disable_emojis() {
  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
