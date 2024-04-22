@@ -347,7 +347,7 @@ body a {
 .image_frame {
   width: 100%;
   display: block;
-  /* height: 100%; */
+  height: auto !important;
   overflow: hidden;
 }
 
