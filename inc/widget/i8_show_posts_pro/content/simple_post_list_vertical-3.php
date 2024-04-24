@@ -38,7 +38,7 @@ echo $sub_title_print . '</div>';
             endif;
             ?>
           </span>
-          <a class="display-4 " href="<?php echo get_the_permalink(); ?>">
+          <a class="<?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> " href="<?php echo get_the_permalink(); ?>">
             <?php i8_limit_text(get_the_title(), 89, '...'); ?>
           </a>
         </div>
