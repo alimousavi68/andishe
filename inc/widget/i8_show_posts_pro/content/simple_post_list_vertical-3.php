@@ -27,7 +27,7 @@ echo $sub_title_print . '</div>';
       ?>
       <div
         class="col-12 col-xl-6 col-md-6 col-sm-12 vitrin-2-small-item1 position-relative px-1 px-xl-2 px-lg-2 px-sm-2 d-flex flex-column row-gap-2">
-        <a href="<?php the_permalink(); ?>" class="image_frame">
+        <a href="<?php the_permalink(); ?>" class="image_frame h-auto">
           <?php echo i8_the_thumbnail('i8-lg-290-163', 'w-100 h-auto  object-fit-cover overflow-hidden hover i8-img-fit ', $dimenition = array('width' => $thumb_width, 'height' => $thumb_height) , true, '', false, true); ?>
         </a>
         <div class="p-1">
