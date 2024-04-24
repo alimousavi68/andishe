@@ -47,7 +47,7 @@ $category_posts = new WP_Query(
               <?php echo $sub_title; ?>
             </p>
             <h1 class="f24 fw-7 text-xl-end text-lg-end text-md-end text-sm-center l1">
-              <a href="<?php echo get_the_permalink(); ?>" class="">
+              <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
                 <?php i8_limit_text(get_the_title(), 90, '...'); ?>
               </a>
             </h1>
@@ -93,7 +93,7 @@ $category_posts = new WP_Query(
             <div class="d-flex flex-column gap-0 justify-content-between">
               <div class="title-box">
                 <h1 class="post-title <?php echo $title_font_size; ?>  <?php echo $title_font_weight; ?> l1 ">
-                  <a href="<?php echo get_the_permalink(); ?>" class="">
+                  <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
                     <?php i8_limit_text(get_the_title(), 82, '...'); ?>
                   </a>
                 </h1>
@@ -144,7 +144,7 @@ $category_posts = new WP_Query(
           <div class="d-flex flex-column gap-0 justify-content-between">
             <div class="title-box">
               <h1 class="post-title <?php echo $title_font_size; ?>  <?php echo $title_font_weight; ?> l1 ">
-                <a href="<?php echo get_the_permalink(); ?>" class="">
+                <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
                   <?php i8_limit_text(get_the_title(), 82, '...'); ?>
                 </a>
               </h1>
