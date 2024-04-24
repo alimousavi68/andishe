@@ -94,7 +94,7 @@ function add_custom_subtitle_field()
     add_action('edit_form_after_title', 'custom_subtitle_field');
 }
 
-// add_action('add_meta_boxes', 'add_custom_subtitle_field');
+add_action('add_meta_boxes', 'add_custom_subtitle_field');
 
 function custom_subtitle_field()
 {
@@ -123,7 +123,7 @@ add_action('save_post', 'save_post_subtitle');
  */
 
 // اضافه کردن یک متا باکس جدید به صفحه ایجاد و ویرایش پست ها
-// add_action('add_meta_boxes', 'add_primary_category_meta_box');
+add_action('add_meta_boxes', 'add_primary_category_meta_box');
 function add_primary_category_meta_box()
 {
     add_meta_box('primary_category_meta_box', 'داشبورد ویژه', 'render_primary_category_meta_box', 'post', 'side', 'high');
