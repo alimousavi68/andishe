@@ -1312,9 +1312,12 @@ img.hover:hover {
 }
 
 .content-entry img {
-  width: auto;
+  width: auto !important;
   height: auto;
   max-width: 100%;
+  border-radius: 20px !important;
+  margin: 25px auto;
+  display: flex;
   /* border-radius: 15px; */
   /* object-fit: cover; */
   /* display: flex; */
