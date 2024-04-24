@@ -164,7 +164,8 @@
                 <!-- Main Menu -->
                 <div class="d-none d-lg-flex i8-main-menu col-24 d-flex flex-column justify-content-end ">
                     <div class="d-flex flex-row">
-                        <a id="mini-logo" class="sticky-logo ms-2">
+                        <a id="mini-logo" href="<?php echo bloginfo('url') ?>" title="<?php bloginfo('title'); ?> " class="sticky-logo ms-2">
+
                             <img width="122" height="40" src="<?php echo get_stylesheet_directory_uri(); ?>/images/global/mini-logo-andishe.webp" alt="logo"  />
                         </a>
                         <?php build_custom_menu_by_location('primary'); ?>
