@@ -1311,6 +1311,10 @@ img.hover:hover {
 
 }
 
+.content-entry .image_frame{ 
+  width: auto !important; 
+}
+
 .content-entry img {
   width: auto !important;
   height: auto;
