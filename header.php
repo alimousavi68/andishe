@@ -8,7 +8,7 @@
     <meta name="theme-color" content="<?php echo (get_theme_mod('i8_light_primary_color')) ? get_theme_mod('i8_light_primary_color') : '#0A93CD'; ?>" />
 
     <!-- SEO Meta Tags -->
-    <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
+    <title><?php wp_title(' | ', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 
     <meta name="keywords" content="<?php
     if (is_single()) {
@@ -26,7 +26,7 @@
     ?>">
 
     <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="<?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?>">
+    <meta property="og:title" content="<?php wp_title(' | ', true, 'right'); ?> <?php bloginfo('name'); ?>">
     <meta property="og:description" content="<?php
     if (is_home() || is_front_page()) {
         bloginfo('description');
@@ -54,36 +54,7 @@
 
     
 
-    <!-- Schema.org Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "NewsArticle",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "<?php echo get_permalink(); ?>"
-        },
-        "headline": "<?php wp_title('|', true, 'right'); ?>",
-        "image": [
-            "<?php echo has_post_thumbnail() ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/global/no-image.webp'; ?>"
-        ],
-        "datePublished": "<?php echo get_the_date('c', $post); ?>",
-        "dateModified": "<?php echo get_the_modified_date('c', $post); ?>",
-        "author": {
-            "@type": "Person",
-            "name": "<?php the_author(); ?>"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "<?php bloginfo('name'); ?>",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "<?php echo get_stylesheet_directory_uri(); ?>/images/global/logo-andishe.png"
-            }
-        },
-        "description": "<?php echo strip_tags(get_the_excerpt()); ?>"
-    }
-    </script>
+   
 
 
     <?php wp_head(); ?>
