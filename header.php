@@ -1,15 +1,91 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html <?php language_attributes(); ?>>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color"
-        content="<?php echo (get_theme_mod('i8_light_primary_color')) ? get_theme_mod('i8_light_primary_color') : '#0A93CD'; ?>" />
-    <title>
-        <?php bloginfo('title'); ?>
-    </title>
+    <meta name="theme-color" content="<?php echo (get_theme_mod('i8_light_primary_color')) ? get_theme_mod('i8_light_primary_color') : '#0A93CD'; ?>" />
+
+    <!-- SEO Meta Tags -->
+    <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
+
+    <meta name="keywords" content="<?php
+    if (is_single()) {
+        $tags = get_the_tags();
+        $tag_names = array();
+        if ($tags) {
+            foreach ($tags as $tag) {
+                $tag_names[] = $tag->name;
+            }
+            echo implode(', ', $tag_names);
+        }
+    } else {
+        echo 'اخبار, اخبار روز , خبر';
+    }
+    ?>">
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="<?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?>">
+    <meta property="og:description" content="<?php
+    if (is_home() || is_front_page()) {
+        bloginfo('description');
+    } elseif (is_single()) {
+        echo strip_tags(get_the_excerpt());
+    }
+    ?>">
+    <meta property="og:image"
+        content="<?php echo has_post_thumbnail() ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/global/no-image.webp'; ?>">
+    <meta property="og:url" content="<?php echo get_permalink(); ?>">
+    <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
+    <meta property="og:type" content="article">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?>">
+    <meta name="twitter:description" content="<?php
+    if (is_home() || is_front_page()) {
+        bloginfo('description');
+    } elseif (is_single()) {
+        echo strip_tags(get_the_excerpt());
+    }
+    ?>">
+    <meta name="twitter:image"
+        content="<?php echo has_post_thumbnail() ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/global/no-image.webp'; ?>">
+
+    
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "<?php echo get_permalink(); ?>"
+        },
+        "headline": "<?php wp_title('|', true, 'right'); ?>",
+        "image": [
+            "<?php echo has_post_thumbnail() ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/images/global/no-image.webp'; ?>"
+        ],
+        "datePublished": "<?php echo get_the_date('c', $post); ?>",
+        "dateModified": "<?php echo get_the_modified_date('c', $post); ?>",
+        "author": {
+            "@type": "Person",
+            "name": "<?php the_author(); ?>"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "<?php bloginfo('name'); ?>",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "<?php echo get_stylesheet_directory_uri(); ?>/images/global/logo-andishe.png"
+            }
+        },
+        "description": "<?php echo strip_tags(get_the_excerpt()); ?>"
+    }
+    </script>
+
+
     <?php wp_head(); ?>
     <?php if (is_singular()): ?>
         <style media="print">
@@ -78,14 +154,14 @@
 
         #mini-logo {
 
-            width:0px;
+            width: 0px;
             overflow: hidden;
-            transition: width 0.5s ease ;
+            transition: width 0.5s ease;
         }
 
         .i8-show {
             width: 122px !important;
-            transition: width 0.5s ease ;
+            transition: width 0.5s ease;
         }
     </style>
 
@@ -164,13 +240,16 @@
                 <!-- Main Menu -->
                 <div class="d-none d-lg-flex i8-main-menu col-24 d-flex flex-column justify-content-end ">
                     <div class="d-flex flex-row">
-                        <a id="mini-logo" href="<?php echo bloginfo('url') ?>" title="<?php bloginfo('title'); ?> " class="sticky-logo ms-2">
+                        <a id="mini-logo" href="<?php echo bloginfo('url') ?>" title="<?php bloginfo('title'); ?> "
+                            class="sticky-logo ms-2">
 
-                            <img width="122" height="40" src="<?php echo get_stylesheet_directory_uri(); ?>/images/global/mini-logo-andishe.webp" alt="logo"  />
+                            <img width="122" height="40"
+                                src="<?php echo get_stylesheet_directory_uri(); ?>/images/global/mini-logo-andishe.webp"
+                                alt="logo" />
                         </a>
                         <?php build_custom_menu_by_location('primary'); ?>
                     </div>
-                    
+
 
                     <!-- Tools Btn -->
                     <div class="d-flex justify-content-end align-items-center gap-2 gap-lg-2 gap-sm-2">
