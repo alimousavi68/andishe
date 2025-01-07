@@ -46,11 +46,11 @@ echo $sub_title_print . '</div>';
             <div class="title-box">
              
 
-              <h1 class="post-title <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l1">
+              <h3 class="post-title <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l1">
                 <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
                   <?php i8_limit_text(get_the_title(), 200, '...'); ?>
                 </a>
-              </h1>
+              </h3>
             </div>
             <p class="post-publish-date f12 text-end text-subtitle my-2">
               <?php the_date() ?>

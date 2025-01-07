@@ -44,11 +44,11 @@ if ($category_posts->have_posts()) {
             
             <div class="d-flex flex-column gap-1">
                 <div class="title-box">
-                    <h1 class="post-title <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?>  l1">
+                    <h3 class="post-title <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?>  l1">
                         <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
                             <?php i8_limit_text(get_the_title(), 75, '...'); ?>
                         </a>
-                    </h1>
+                    </h3>
                 </div>
                 <p class="post-publish-date f12 text-end text-subtitle my-0">
                     <?php the_date() ?>

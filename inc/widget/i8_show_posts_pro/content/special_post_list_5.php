@@ -52,11 +52,11 @@ echo $sub_title_print . '</div>';
               echo i8_primary_category(get_the_ID());
             endif;
             ?>
-            <h1 class="post-title <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l1">
+            <h3 class="post-title <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l1">
               <a href="<?php echo get_the_permalink(); ?>" class="">
                 <?php i8_limit_text(get_the_title(), 100, '...'); ?>
               </a>
-            </h1>
+            </h3>
           </div>
 
         </div>

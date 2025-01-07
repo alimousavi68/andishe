@@ -46,11 +46,11 @@ echo $sub_title_print . '</div>';
           <div class="single-item-data d-flex flex-column gap-1 justify-content-between">
             <div class="title-box">
               <?php echo i8_primary_category(get_the_ID()) ?>
-              <h1 class="post-title <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l1">
+              <h3 class="post-title <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l1">
                 <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
                   <?php i8_limit_text(get_the_title(), 200, '...'); ?>
                 </a>
-              </h1>
+              </h3>
             </div>
             <p class="post-publish-date f12 text-end text-subtitle mb-2">
               <?php the_date() ?>
@@ -86,11 +86,11 @@ echo $sub_title_print . '</div>';
           <div class="single-item-data d-flex flex-column gap-1 justify-content-between">
             <div class="title-box">
               <?php echo i8_primary_category(get_the_ID()) ?>
-              <h1 class="post-title <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l1">
+              <h3 class="post-title <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l1">
                 <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
                   <?php i8_limit_text(get_the_title(), 200, '...'); ?>
                 </a>
-              </h1>
+              </h3>
             </div>
             <p class="post-publish-date f12 text-end text-subtitle mb-2">
               <?php the_date() ?>
