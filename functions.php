@@ -58,4 +58,56 @@ require_once(get_template_directory() . '/inc/functions/i8_CustomTermField.php')
 
 
 //Include jalali-date external library 
-require_once( get_template_directory()  . '/lib/jDateTime-master/jdatetime.class.php' );
+require_once(get_template_directory()  . '/lib/jDateTime-master/jdatetime.class.php');
+
+
+
+
+add_action('wp_footer', function () {
+    if (is_single(2030107)) {
+?>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const iframes = document.querySelectorAll(".pelikan_iframe");
+                const relatedIframe = document.getElementById("pelikan_related");
+                const pageTitle = document.title.trim();
+                const baseSrc = "https://pelikan-network.ir/widget/pelikan?hash=andishemoaser-viewPelikan-f16f25279f48136e8b30587246e24be37c40aefe31d0d40551172f180e4d94f4";
+
+                window.addEventListener("message", (event) => {
+                    const {
+                        data
+                    } = event;
+                    if (data?.height && data?.src) {
+                        iframes.forEach((iframe) => {
+                            if (iframe.src === data.src) {
+                                iframe.style.height = `${data.height}px`;
+                            }
+                        });
+                    }
+                });
+
+                if (relatedIframe) {
+                    relatedIframe.src = pageTitle ?
+                        `${baseSrc}&text=${encodeURIComponent(pageTitle)}` :
+                        baseSrc;
+                }
+            });
+        </script>
+        <style>
+            .pelikan_iframe {
+                background-color: #fff;
+                width: 100%;
+                height: 600px;
+                border: unset;
+            }
+
+            @media only screen and (min-width: 650px) {
+                .pelikan_iframe {
+                    display: none;
+                }
+            }
+        </style>
+<?php
+    }
+});
