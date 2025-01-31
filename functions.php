@@ -64,7 +64,7 @@ require_once(get_template_directory()  . '/lib/jDateTime-master/jdatetime.class.
 
 
 add_action('wp_footer', function () {
-    if (is_single(2030107)) {
+    if (is_single()) {
 ?>
 
         <script>
