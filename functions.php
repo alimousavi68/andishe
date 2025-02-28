@@ -67,7 +67,7 @@ add_action('wp_footer', function () {
     if (is_single()) {
 ?>
 
-        <script>
+        <!-- <script>
             document.addEventListener("DOMContentLoaded", () => {
                 const iframes = document.querySelectorAll(".pelikan_iframe");
                 const relatedIframe = document.getElementById("pelikan_related");
@@ -93,8 +93,8 @@ add_action('wp_footer', function () {
                         baseSrc;
                 }
             });
-        </script>
-        <style>
+        </script> -->
+        <!-- <style>
             .pelikan_iframe {
                 background-color: #fff;
                 width: 100%;
@@ -107,7 +107,7 @@ add_action('wp_footer', function () {
                     display: none;
                 }
             }
-        </style>
+        </style> -->
 <?php
     }
 });
